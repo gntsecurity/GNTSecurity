@@ -8,7 +8,7 @@
 }
 
 .navbar .logo img {
-    height: 20px; /* Significantly reduced the height for a smaller logo */
+    height: 30px; /* Significantly reduced the height for a smaller logo */
     width: auto;
     max-width: 100px; /* Ensure the logo doesn't exceed this width */
 }
