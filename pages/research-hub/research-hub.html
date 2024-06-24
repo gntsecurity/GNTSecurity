@@ -3,58 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GNTSecurity - Research Hub</title>
-    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon/favicon.ico">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap">
-    <link rel="stylesheet" href="../../assets/css/base/reset.css">
-    <link rel="stylesheet" href="../../assets/css/base/typography.css">
-    <link rel="stylesheet" href="../../assets/css/layout/main.css">
     <link rel="stylesheet" href="../../assets/css/components/navbar.css">
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
     <link rel="stylesheet" href="../../assets/css/pages/research-hub.css">
-    <script src="../../assets/js/components/load.js" defer></script>
+    <title>Research Hub - GNTSecurity</title>
 </head>
 <body>
-    <div include-html="../../components/header.html"></div>
+    <!-- Header -->
+    <?php include('../components/header.html'); ?>
 
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1>Research Hub</h1>
-                <p>Stay informed with the latest articles, whitepapers, and case studies in the IT industry.</p>
+                <h1>Research Everything IT</h1>
+                <input type="text" placeholder="Search the Research Hub">
+                <div class="hero-icons">
+                    <a href="#">Cloud</a>
+                    <a href="#">Data Analytics</a>
+                    <a href="#">Data Center</a>
+                    <a href="#">Digital Workspace</a>
+                    <a href="#">Hardware</a>
+                    <a href="#">Networking</a>
+                    <a href="#">Security</a>
+                    <a href="#">Services</a>
+                    <a href="#">Software</a>
+                </div>
             </div>
         </section>
-        <section class="research-articles">
-            <div class="article">
-                <img src="../../assets/images/research/article1.jpg" alt="Article 1">
-                <h2>Latest Trends in Cybersecurity</h2>
-                <p>Discover the latest trends and strategies to protect your business from cyber threats.</p>
-                <a href="#" class="read-more">Read More</a>
-            </div>
-            <div class="article">
-                <img src="../../assets/images/research/article2.jpg" alt="Article 2">
-                <h2>Cloud Computing: Benefits and Challenges</h2>
-                <p>Explore the benefits and challenges of adopting cloud computing solutions for your business.</p>
-                <a href="#" class="read-more">Read More</a>
-            </div>
-            <div class="article">
-                <img src="../../assets/images/research/article3.jpg" alt="Article 3">
-                <h2>Network Security Best Practices</h2>
-                <p>Learn about the best practices to secure your network and protect your data.</p>
-                <a href="#" class="read-more">Read More</a>
-            </div>
+
+        <section class="recently-added">
+            <h2>Read the Latest in the Research Hub</h2>
+            <!-- Add relevant content here -->
         </section>
     </main>
 
-    <div include-html="../../components/footer.html"></div>
-    <script>
-        document.querySelectorAll('div[include-html]').forEach(function(el) {
-            fetch(el.getAttribute('include-html'))
-                .then(response => response.text())
-                .then(data => {
-                    el.innerHTML = data;
-                });
-        });
-    </script>
+    <!-- Footer -->
+    <?php include('../components/footer.html'); ?>
 </body>
 </html>

@@ -27,7 +27,70 @@
                         <a href="#">Storage & Hard Drives</a>
                     </div>
                 </div>
-                <a href="software.html">Software</a>
+                <div class="dropdown">
+                    <button class="dropdown-btn">Software</button>
+                    <div class="dropdown-content">
+                        <a href="#">Business Applications</a>
+                        <a href="#">Communication</a>
+                        <a href="#">Graphics & Design</a>
+                        <a href="#">Networking & Servers</a>
+                        <a href="#">Operating Systems</a>
+                        <a href="#">Programming & Web Development</a>
+                        <a href="#">Security</a>
+                        <a href="#">Utilities</a>
+                        <a href="#">Virtualization</a>
+                        <a href="#">Popular Software Titles</a>
+                        <a href="#">Subscriptions</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-btn">Services</button>
+                    <div class="dropdown-content">
+                        <a href="#">GNTS Amplified™ Services</a>
+                        <a href="#">eProcurement Integration</a>
+                        <a href="#">Warranty Services</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-btn">IT Solutions</button>
+                    <div class="dropdown-content">
+                        <a href="#">Analytics</a>
+                        <a href="#">Artificial Intelligence (AI)</a>
+                        <a href="#">Cloud Solutions</a>
+                        <a href="#">Cybersecurity Solutions</a>
+                        <a href="#">Data Management</a>
+                        <a href="#">DevOps</a>
+                        <a href="#">Digital Signage</a>
+                        <a href="#">Digital Transformation</a>
+                        <a href="#">Hybrid Infrastructure</a>
+                        <a href="#">IT Asset Management</a>
+                        <a href="#">Print Solutions</a>
+                        <a href="#">Workplace Modernization</a>
+                        <a href="#">IT Solutions by Industry</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-btn">Brands</button>
+                    <div class="dropdown-content">
+                        <a href="#">Adobe</a>
+                        <a href="#">Apple</a>
+                        <a href="#">APC</a>
+                        <a href="#">Cisco</a>
+                        <a href="#">Dell</a>
+                        <a href="#">Google</a>
+                        <a href="#">HP</a>
+                        <a href="#">IBM</a>
+                        <a href="#">Intel</a>
+                        <a href="#">Lenovo</a>
+                        <a href="#">Microsoft</a>
+                        <a href="#">NetApp</a>
+                        <a href="#">Nutanix</a>
+                        <a href="#">Palo Alto</a>
+                        <a href="#">Samsung</a>
+                        <a href="#">VMware</a>
+                        <a href="#">Browse All Brands</a>
+                    </div>
+                </div>
                 <a href="services.html">Services</a>
                 <a href="it-solutions.html">IT Solutions</a>
                 <a href="brands.html">Brands</a>
@@ -42,8 +105,10 @@
         </nav>
     </header>
     <script>
-        document.querySelector('.dropdown-btn').addEventListener('click', function() {
-            document.querySelector('.dropdown-content').classList.toggle('show');
+        document.querySelectorAll('.dropdown-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                button.nextElementSibling.classList.toggle('show');
+            });
         });
 
         window.onclick = function(event) {
