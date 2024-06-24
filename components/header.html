@@ -11,7 +11,7 @@
             <a href="index.html"><img src="../../assets/images/logo/logo.png" alt="GNTSecurity" class="logo"></a>
             <div class="navbar-links">
                 <div class="dropdown">
-                    <button class="dropdown-btn">Hardware</button>
+                    <a href="hardware.html" class="dropdown-link">Hardware</a>
                     <div class="dropdown-content">
                         <a href="#">Cables</a>
                         <a href="#">Computer Accessories</a>
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button class="dropdown-btn">Software</button>
+                    <a href="software.html" class="dropdown-link">Software</a>
                     <div class="dropdown-content">
                         <a href="#">Business Applications</a>
                         <a href="#">Communication</a>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button class="dropdown-btn">Services</button>
+                    <a href="services.html" class="dropdown-link">Services</a>
                     <div class="dropdown-content">
                         <a href="#">GNTS Amplified™ Services</a>
                         <a href="#">eProcurement Integration</a>
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button class="dropdown-btn">IT Solutions</button>
+                    <a href="it-solutions.html" class="dropdown-link">IT Solutions</a>
                     <div class="dropdown-content">
                         <a href="#">Analytics</a>
                         <a href="#">Artificial Intelligence (AI)</a>
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button class="dropdown-btn">Brands</button>
+                    <a href="brands.html" class="dropdown-link">Brands</a>
                     <div class="dropdown-content">
                         <a href="#">Adobe</a>
                         <a href="#">Apple</a>
@@ -91,9 +91,6 @@
                         <a href="#">Browse All Brands</a>
                     </div>
                 </div>
-                <a href="services.html">Services</a>
-                <a href="it-solutions.html">IT Solutions</a>
-                <a href="brands.html">Brands</a>
                 <a href="research-hub.html">Research Hub</a>
             </div>
             <div class="navbar-icons">
@@ -104,24 +101,5 @@
             </div>
         </nav>
     </header>
-    <script>
-        document.querySelectorAll('.dropdown-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                button.nextElementSibling.classList.toggle('show');
-            });
-        });
-
-        window.onclick = function(event) {
-            if (!event.target.matches('.dropdown-btn')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
 </body>
 </html>
