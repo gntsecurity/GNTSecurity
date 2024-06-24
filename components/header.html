@@ -1,24 +1,62 @@
-<header>
-    <nav class="navbar">
-        <div class="logo">
-            <a href="../../index.html"><img src="../../assets/images/logo/logo.png" alt="GNTSecurity Logo"></a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="../../pages/hardware/hardware.html">Hardware</a></li>
-            <li><a href="../../pages/software/software.html">Software</a></li>
-            <li><a href="../../pages/services/services.html">Services</a></li>
-            <li><a href="../../pages/it-solutions/it-solutions.html">IT Solutions</a></li>
-            <li><a href="../../pages/brands/brands.html">Brands</a></li>
-            <li><a href="../../pages/research-hub/research-hub.html">Research Hub</a></li>
-        </ul>
-        <div class="search-bar">
-            <input type="text" placeholder="What can we help you find today?">
-            <button type="submit"><img src="../../assets/images/icons/search.png" alt="Search"></button>
-        </div>
-        <div class="user-actions">
-            <a href="../../pages/notifications/notifications.html"><img src="../../assets/images/icons/notifications.png" alt="Notifications"></a>
-            <a href="../../pages/sign-in/sign-in.html"><img src="../../assets/images/icons/signin.png" alt="Sign in"></a>
-            <a href="../../pages/cart/cart.html"><img src="../../assets/images/icons/cart.png" alt="Cart"></a>
-        </div>
-    </nav>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/components/navbar.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html"><img src="../../assets/images/logo/logo.png" alt="GNTSecurity" class="logo"></a>
+            <div class="navbar-links">
+                <div class="dropdown">
+                    <button class="dropdown-btn">Hardware</button>
+                    <div class="dropdown-content">
+                        <a href="#">Cables</a>
+                        <a href="#">Computer Accessories</a>
+                        <a href="#">Computer Monitors & Displays</a>
+                        <a href="#">Computers</a>
+                        <a href="#">Electronics</a>
+                        <a href="#">Networking</a>
+                        <a href="#">Office Equipment & Supplies</a>
+                        <a href="#">Phones & Video Conferencing</a>
+                        <a href="#">Power</a>
+                        <a href="#">Printers & Supplies</a>
+                        <a href="#">Servers & Server Management</a>
+                        <a href="#">Storage & Hard Drives</a>
+                    </div>
+                </div>
+                <a href="software.html">Software</a>
+                <a href="services.html">Services</a>
+                <a href="it-solutions.html">IT Solutions</a>
+                <a href="brands.html">Brands</a>
+                <a href="research-hub.html">Research Hub</a>
+            </div>
+            <div class="navbar-icons">
+                <input type="text" placeholder="What can we help you find today?"><button>Search</button>
+                <a href="#"><img src="../../assets/images/icons/notifications.png" alt="Notifications"></a>
+                <a href="#"><img src="../../assets/images/icons/signin.png" alt="Sign In"></a>
+                <a href="#"><img src="../../assets/images/icons/cart.png" alt="Cart"></a>
+            </div>
+        </nav>
+    </header>
+    <script>
+        document.querySelector('.dropdown-btn').addEventListener('click', function() {
+            document.querySelector('.dropdown-content').classList.toggle('show');
+        });
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-btn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

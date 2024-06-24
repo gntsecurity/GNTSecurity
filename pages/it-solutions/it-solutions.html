@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNTSecurity - IT Solutions</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/layout/main.css">
+    <link rel="stylesheet" href="../../assets/css/components/navbar.css">
+    <link rel="stylesheet" href="../../assets/css/components/footer.css">
+    <link rel="stylesheet" href="../../assets/css/pages/it-solutions.css">
+    <script src="../../assets/js/components/load.js" defer></script>
+</head>
+<body>
+    <div include-html="../../components/header.html"></div>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>IT Solutions</h1>
+                <p>Discover our comprehensive IT solutions designed to help your business grow and succeed.</p>
+            </div>
+        </section>
+        <section class="it-solutions">
+            <div class="solution">
+                <img src="../../assets/images/icons/cloud.png" alt="Cloud Solutions">
+                <h2>Cloud Solutions</h2>
+                <p>Our cloud solutions offer flexibility, scalability, and efficiency for your business operations.</p>
+            </div>
+            <div class="solution">
+                <img src="../../assets/images/icons/cybersecurity.png" alt="Cybersecurity">
+                <h2>Cybersecurity</h2>
+                <p>Protect your business from cyber threats with our advanced cybersecurity solutions.</p>
+            </div>
+            <div class="solution">
+                <img src="../../assets/images/icons/network.png" alt="Networking">
+                <h2>Networking</h2>
+                <p>Enhance your business connectivity with our reliable and secure networking solutions.</p>
+            </div>
+        </section>
+    </main>
+
+    <div include-html="../../components/footer.html"></div>
+    <script>
+        document.querySelectorAll('div[include-html]').forEach(function(el) {
+            fetch(el.getAttribute('include-html'))
+                .then(response => response.text())
+                .then(data => {
+                    el.innerHTML = data;
+                });
+        });
+    </script>
+</body>
+</html>

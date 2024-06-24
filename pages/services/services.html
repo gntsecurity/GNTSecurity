@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNTSecurity - Services</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/layout/main.css">
+    <link rel="stylesheet" href="../../assets/css/components/navbar.css">
+    <link rel="stylesheet" href="../../assets/css/components/footer.css">
+    <link rel="stylesheet" href="../../assets/css/pages/services.css">
+    <script src="../../assets/js/components/load.js" defer></script>
+</head>
+<body>
+    <div include-html="../../components/header.html"></div>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Our Services</h1>
+                <p>Explore the range of services we offer to help your business thrive.</p>
+            </div>
+        </section>
+        <section class="services-list">
+            <div class="service">
+                <h2>Consulting</h2>
+                <p>Our expert consulting services help you strategize and implement the best IT solutions for your business.</p>
+            </div>
+            <div class="service">
+                <h2>Implementation</h2>
+                <p>We provide seamless implementation services to ensure your IT solutions are up and running efficiently.</p>
+            </div>
+            <div class="service">
+                <h2>Support</h2>
+                <p>Our dedicated support team is available 24/7 to assist you with any issues or queries you may have.</p>
+            </div>
+        </section>
+    </main>
+
+    <div include-html="../../components/footer.html"></div>
+    <script>
+        document.querySelectorAll('div[include-html]').forEach(function(el) {
+            fetch(el.getAttribute('include-html'))
+                .then(response => response.text())
+                .then(data => {
+                    el.innerHTML = data;
+                });
+        });
+    </script>
+</body>
+</html>
