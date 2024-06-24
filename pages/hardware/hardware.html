@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNTSecurity - Hardware</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/layout/main.css">
+    <link rel="stylesheet" href="../../assets/css/components/navbar.css">
+    <link rel="stylesheet" href="../../assets/css/components/footer.css">
+    <link rel="stylesheet" href="../../assets/css/pages/hardware.css">
+    <script src="../../assets/js/components/load.js" defer></script>
+</head>
+<body>
+    <div include-html="../../components/header.html"></div>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Hardware Solutions</h1>
+                <p>Explore our range of high-quality hardware products tailored to meet your business needs.</p>
+            </div>
+        </section>
+        <section class="hardware-products">
+            <div class="product">
+                <img src="../../assets/images/products/antivirus.jpg" alt="Antivirus">
+                <h2>Antivirus Software</h2>
+                <p>Protect your systems with our top-rated antivirus solutions.</p>
+            </div>
+            <div class="product">
+                <img src="../../assets/images/products/encryption.jpg" alt="Encryption">
+                <h2>Encryption Tools</h2>
+                <p>Ensure your data is secure with our advanced encryption tools.</p>
+            </div>
+            <div class="product">
+                <img src="../../assets/images/products/firewall.jpg" alt="Firewall">
+                <h2>Firewall Systems</h2>
+                <p>Keep your network safe with our robust firewall systems.</p>
+            </div>
+        </section>
+    </main>
+
+    <div include-html="../../components/footer.html"></div>
+    <script>
+        document.querySelectorAll('div[include-html]').forEach(function(el) {
+            fetch(el.getAttribute('include-html'))
+                .then(response => response.text())
+                .then(data => {
+                    el.innerHTML = data;
+                });
+        });
+    </script>
+</body>
+</html>
