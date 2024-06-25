@@ -1,0 +1,138 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Typography */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Layout */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px 0;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    color: #004d40; /* Dark green color */
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.networking-overview,
+.networking-components,
+.networking-tips,
+.networking-troubleshooting,
+.networking-support {
+    margin: 20px 0;
+}
+
+.networking-overview h2,
+.networking-components h2,
+.networking-tips h2,
+.networking-troubleshooting h2,
+.networking-support h2 {
+    font-size: 1.8em;
+    color: #004d40; /* Dark green color */
+    margin-bottom: 10px;
+}
+
+.networking-overview p,
+.networking-tips ul,
+.networking-troubleshooting ul,
+.networking-support p {
+    margin: 10px 0;
+}
+
+.component-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.networking-component {
+    flex: 1 1 calc(33% - 20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.networking-component h3 {
+    font-size: 1.5em;
+    color: #004d40; /* Dark green color */
+    margin-bottom: 10px;
+}
+
+.networking-component img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.networking-component p {
+    font-size: 1em;
+    color: #555;
+}
+
+.networking-tips ul,
+.networking-troubleshooting ul {
+    list-style: disc;
+    padding-left: 20px;
+    text-align: left;
+    display: inline-block;
+}
+
+.networking-tips ul li,
+.networking-troubleshooting ul li {
+    margin: 5px 0;
+}
+
+.networking-support ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+    display: inline-block;
+}
+
+.networking-support ul li {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #004d40; /* Dark green color */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
