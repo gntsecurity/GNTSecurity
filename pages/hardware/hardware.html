@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GNTSecurity - Hardware</title>
+    <title>GNTSecurity - Networking</title>
     <link rel="icon" type="image/x-icon" href="../../assets/images/favicon/favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="../../assets/css/base/reset.css">
@@ -18,40 +18,27 @@
     <div include-html="../../components/header.html"></div>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Hardware Solutions</h1>
-                <p>Explore our range of high-quality hardware products tailored to meet your business needs.</p>
-            </div>
-        </section>
-        <section class="hardware-products">
+        <section class="content">
+            <h1>Networking</h1>
+            <p>Reliable networking solutions for seamless connectivity.</p>
             <div class="product">
-                <img src="../../assets/images/products/antivirus.jpg" alt="Antivirus">
-                <h3>Antivirus Software</h3>
-                <p>Protect your systems with our top-rated antivirus solutions.</p>
+                <h2>Routers</h2>
+                <p>High-speed routers for robust network performance.</p>
+                <img src="../../assets/images/products/router.jpg" alt="Router">
             </div>
             <div class="product">
-                <img src="../../assets/images/products/encryption.jpg" alt="Encryption">
-                <h3>Encryption Tools</h3>
-                <p>Ensure your data is secure with our advanced encryption tools.</p>
+                <h2>Switches</h2>
+                <p>Efficient network switches for optimal data flow.</p>
+                <img src="../../assets/images/products/switch.jpg" alt="Switch">
             </div>
             <div class="product">
-                <img src="../../assets/images/products/firewall.jpg" alt="Firewall">
-                <h3>Firewall Systems</h3>
-                <p>Keep your network safe with our robust firewall systems.</p>
+                <h2>Access Points</h2>
+                <p>Reliable access points for extended network coverage.</p>
+                <img src="../../assets/images/products/access-point.jpg" alt="Access Point">
             </div>
         </section>
     </main>
 
     <div include-html="../../components/footer.html"></div>
-    <script>
-        document.querySelectorAll('div[include-html]').forEach(function(el) {
-            fetch(el.getAttribute('include-html'))
-                .then(response => response.text())
-                .then(data => {
-                    el.innerHTML = data;
-                });
-        });
-    </script>
 </body>
 </html>

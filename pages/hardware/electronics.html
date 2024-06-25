@@ -3,40 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNTSecurity - Electronics</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/layout/main.css">
     <link rel="stylesheet" href="../../assets/css/components/navbar.css">
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
-    <link rel="stylesheet" href="../../assets/css/pages/electronics.css">
-    <title>Electronics - GNTSecurity</title>
+    <link rel="stylesheet" href="../../assets/css/pages/hardware.css">
+    <script src="../../assets/js/components/load.js" defer></script>
 </head>
 <body>
-    <!-- Header -->
-    <?php include('../components/header.html'); ?>
+    <div include-html="../../components/header.html"></div>
 
     <main>
-        <section class="hero">
+        <section class="content">
             <h1>Electronics</h1>
-            <p>Explore our diverse range of electronic products for every need.</p>
-        </section>
-        <section class="electronics-grid">
-            <div class="electronic-item">
-                <img src="../../assets/images/products/electronic1.jpg" alt="Electronic 1">
-                <h2>Smartphones</h2>
-                <p>Latest smartphones with advanced features.</p>
-            </div>
-            <div class="electronic-item">
-                <img src="../../assets/images/products/electronic2.jpg" alt="Electronic 2">
+            <p>Explore our wide range of electronics to enhance your daily life.</p>
+            <div class="product">
                 <h2>Tablets</h2>
-                <p>Portable tablets for work and play.</p>
+                <p>Versatile tablets for work and play.</p>
+                <img src="../../assets/images/products/tablet.jpg" alt="Tablet">
             </div>
-            <div class="electronic-item">
-                <img src="../../assets/images/products/electronic3.jpg" alt="Electronic 3">
-                <h2>Smart Watches</h2>
-                <p>Wearable technology for fitness and connectivity.</p>
+            <div class="product">
+                <h2>Smartphones</h2>
+                <p>Latest smartphones for seamless connectivity.</p>
+                <img src="../../assets/images/products/smartphone.jpg" alt="Smartphone">
+            </div>
+            <div class="product">
+                <h2>Smartwatches</h2>
+                <p>Wearable smart technology to keep you connected.</p>
+                <img src="../../assets/images/products/smartwatch.jpg" alt="Smartwatch">
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <?php include('../components/footer.html'); ?>
+    <div include-html="../../components/footer.html"></div>
 </body>
 </html>

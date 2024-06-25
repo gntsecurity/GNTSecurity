@@ -3,43 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNTSecurity - Office Equipment & Supplies</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/layout/main.css">
     <link rel="stylesheet" href="../../assets/css/components/navbar.css">
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
-    <link rel="stylesheet" href="../../assets/css/pages/office-equipment-supplies.css">
-    <title>Office Equipment & Supplies - GNTSecurity</title>
+    <link rel="stylesheet" href="../../assets/css/pages/hardware.css">
+    <script src="../../assets/js/components/load.js" defer></script>
 </head>
 <body>
-    <!-- Header -->
-    <?php include('../components/header.html'); ?>
+    <div include-html="../../components/header.html"></div>
 
     <main>
-        <section class="hero">
+        <section class="content">
             <h1>Office Equipment & Supplies</h1>
             <p>Everything you need to keep your office running smoothly.</p>
-        </section>
-        <section class="office-equipment">
-            <div class="equipment-item">
+            <div class="product">
                 <h2>Printers</h2>
+                <p>High-performance printers for all your office needs.</p>
                 <img src="../../assets/images/products/printer.jpg" alt="Printer">
-                <p>High-quality printers for all your printing needs.</p>
             </div>
-            <div class="equipment-item">
+            <div class="product">
                 <h2>Scanners</h2>
-                <img src="../../assets/images/products/scanner.jpg" alt="Scanner">
                 <p>Efficient scanners for digital document management.</p>
+                <img src="../../assets/images/products/scanner.jpg" alt="Scanner">
             </div>
-        </section>
-        <section class="supplies">
-            <h2>Office Supplies</h2>
-            <ul>
-                <li><a href="#">Paper</a></li>
-                <li><a href="#">Ink & Toner</a></li>
-                <li><a href="#">Stationery</a></li>
-            </ul>
+            <div class="product">
+                <h2>Office Furniture</h2>
+                <p>Comfortable and ergonomic office furniture.</p>
+                <img src="../../assets/images/products/office-furniture.jpg" alt="Office Furniture">
+            </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <?php include('../components/footer.html'); ?>
+    <div include-html="../../components/footer.html"></div>
 </body>
 </html>

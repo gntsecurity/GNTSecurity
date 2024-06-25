@@ -3,40 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNTSecurity - Storage & Hard Drives</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/layout/main.css">
     <link rel="stylesheet" href="../../assets/css/components/navbar.css">
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
-    <link rel="stylesheet" href="../../assets/css/pages/storage-hard-drives.css">
-    <title>Storage & Hard Drives - GNTSecurity</title>
+    <link rel="stylesheet" href="../../assets/css/pages/hardware.css">
+    <script src="../../assets/js/components/load.js" defer></script>
 </head>
 <body>
-    <!-- Header -->
-    <?php include('../components/header.html'); ?>
+    <div include-html="../../components/header.html"></div>
 
     <main>
-        <section class="hero">
+        <section class="content">
             <h1>Storage & Hard Drives</h1>
-            <p>Reliable storage solutions to keep your data secure and accessible.</p>
-        </section>
-        <section class="storage-types">
-            <div class="storage-type">
+            <p>Reliable storage solutions for your data needs.</p>
+            <div class="product">
                 <h2>External Hard Drives</h2>
+                <p>Portable external hard drives for data backup and transfer.</p>
                 <img src="../../assets/images/products/external-hard-drive.jpg" alt="External Hard Drive">
-                <p>Portable storage solutions for on-the-go data access.</p>
             </div>
-            <div class="storage-type">
-                <h2>SSD Drives</h2>
-                <img src="../../assets/images/products/ssd-drive.jpg" alt="SSD Drive">
-                <p>High-speed SSD drives for faster data transfer and reliability.</p>
+            <div class="product">
+                <h2>SSD</h2>
+                <p>High-speed solid-state drives for enhanced performance.</p>
+                <img src="../../assets/images/products/ssd.jpg" alt="SSD">
             </div>
-            <div class="storage-type">
-                <h2>Network Attached Storage</h2>
+            <div class="product">
+                <h2>NAS Devices</h2>
+                <p>Network-attached storage devices for centralized data storage.</p>
                 <img src="../../assets/images/products/nas.jpg" alt="NAS">
-                <p>Network-attached storage for centralized data management.</p>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <?php include('../components/footer.html'); ?>
+    <div include-html="../../components/footer.html"></div>
 </body>
 </html>

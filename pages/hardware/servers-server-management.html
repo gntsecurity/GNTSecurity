@@ -3,43 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNTSecurity - Servers & Server Management</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/layout/main.css">
     <link rel="stylesheet" href="../../assets/css/components/navbar.css">
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
-    <link rel="stylesheet" href="../../assets/css/pages/servers-server-management.css">
-    <title>Servers & Server Management - GNTSecurity</title>
+    <link rel="stylesheet" href="../../assets/css/pages/hardware.css">
+    <script src="../../assets/js/components/load.js" defer></script>
 </head>
 <body>
-    <!-- Header -->
-    <?php include('../components/header.html'); ?>
+    <div include-html="../../components/header.html"></div>
 
     <main>
-        <section class="hero">
+        <section class="content">
             <h1>Servers & Server Management</h1>
-            <p>Powerful server solutions to manage your IT infrastructure.</p>
-        </section>
-        <section class="server-types">
-            <div class="server-type">
+            <p>Robust servers and management tools for your business needs.</p>
+            <div class="product">
                 <h2>Rack Servers</h2>
+                <p>High-performance rack servers for data centers and enterprises.</p>
                 <img src="../../assets/images/products/rack-server.jpg" alt="Rack Server">
-                <p>High-performance rack servers for data centers.</p>
             </div>
-            <div class="server-type">
-                <h2>Tower Servers</h2>
-                <img src="../../assets/images/products/tower-server.jpg" alt="Tower Server">
-                <p>Reliable tower servers for small and medium businesses.</p>
+            <div class="product">
+                <h2>Blade Servers</h2>
+                <p>Scalable blade servers for efficient data processing.</p>
+                <img src="../../assets/images/products/blade-server.jpg" alt="Blade Server">
             </div>
-        </section>
-        <section class="management-tools">
-            <h2>Server Management Tools</h2>
-            <ul>
-                <li><a href="#">Remote Management</a></li>
-                <li><a href="#">Monitoring Software</a></li>
-                <li><a href="#">Backup Solutions</a></li>
-            </ul>
+            <div class="product">
+                <h2>Server Management Tools</h2>
+                <p>Comprehensive tools for effective server management.</p>
+                <img src="../../assets/images/products/server-management.jpg" alt="Server Management Tools">
+            </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <?php include('../components/footer.html'); ?>
+    <div include-html="../../components/footer.html"></div>
 </body>
 </html>

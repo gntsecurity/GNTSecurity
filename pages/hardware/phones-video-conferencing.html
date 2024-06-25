@@ -3,43 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNTSecurity - Phones & Video Conferencing</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/layout/main.css">
     <link rel="stylesheet" href="../../assets/css/components/navbar.css">
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
-    <link rel="stylesheet" href="../../assets/css/pages/phones-video-conferencing.css">
-    <title>Phones & Video Conferencing - GNTSecurity</title>
+    <link rel="stylesheet" href="../../assets/css/pages/hardware.css">
+    <script src="../../assets/js/components/load.js" defer></script>
 </head>
 <body>
-    <!-- Header -->
-    <?php include('../components/header.html'); ?>
+    <div include-html="../../components/header.html"></div>
 
     <main>
-        <section class="hero">
+        <section class="content">
             <h1>Phones & Video Conferencing</h1>
-            <p>Advanced communication tools for seamless connectivity.</p>
-        </section>
-        <section class="phones">
-            <div class="phone-item">
+            <p>Stay connected with our advanced phones and video conferencing solutions.</p>
+            <div class="product">
                 <h2>IP Phones</h2>
+                <p>Feature-rich IP phones for clear and reliable communication.</p>
                 <img src="../../assets/images/products/ip-phone.jpg" alt="IP Phone">
-                <p>High-quality IP phones for clear and reliable communication.</p>
             </div>
-            <div class="phone-item">
-                <h2>Conference Phones</h2>
-                <img src="../../assets/images/products/conference-phone.jpg" alt="Conference Phone">
-                <p>Advanced conference phones for productive meetings.</p>
+            <div class="product">
+                <h2>Video Conferencing Systems</h2>
+                <p>High-quality video conferencing systems for seamless meetings.</p>
+                <img src="../../assets/images/products/video-conferencing.jpg" alt="Video Conferencing">
             </div>
-        </section>
-        <section class="video-conferencing">
-            <h2>Video Conferencing Systems</h2>
-            <ul>
-                <li><a href="#">Room Systems</a></li>
-                <li><a href="#">Desktop Systems</a></li>
-                <li><a href="#">Portable Systems</a></li>
-            </ul>
+            <div class="product">
+                <h2>Headsets</h2>
+                <p>Comfortable headsets for hands-free communication.</p>
+                <img src="../../assets/images/products/headset.jpg" alt="Headset">
+            </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <?php include('../components/footer.html'); ?>
+    <div include-html="../../components/footer.html"></div>
 </body>
 </html>

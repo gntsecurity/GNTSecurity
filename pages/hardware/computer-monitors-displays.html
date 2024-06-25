@@ -3,43 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNTSecurity - Computer Monitors & Displays</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/layout/main.css">
     <link rel="stylesheet" href="../../assets/css/components/navbar.css">
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
-    <link rel="stylesheet" href="../../assets/css/pages/computer-monitors-displays.css">
-    <title>Computer Monitors & Displays - GNTSecurity</title>
+    <link rel="stylesheet" href="../../assets/css/pages/hardware.css">
+    <script src="../../assets/js/components/load.js" defer></script>
 </head>
 <body>
-    <!-- Header -->
-    <?php include('../components/header.html'); ?>
+    <div include-html="../../components/header.html"></div>
 
     <main>
-        <section class="hero">
+        <section class="content">
             <h1>Computer Monitors & Displays</h1>
-            <p>Experience stunning visuals with our range of monitors and displays.</p>
-        </section>
-        <section class="monitor-types">
-            <div class="monitor-type">
+            <p>Enhance your computing experience with our wide range of monitors and displays.</p>
+            <div class="product">
                 <h2>LED Monitors</h2>
-                <img src="../../assets/images/products/monitor1.jpg" alt="LED Monitor">
-                <p>High-resolution LED monitors for clear and vibrant images.</p>
+                <p>High-definition LED monitors for clear and vibrant displays.</p>
+                <img src="../../assets/images/products/led-monitor.jpg" alt="LED Monitor">
             </div>
-            <div class="monitor-type">
-                <h2>Curved Monitors</h2>
-                <img src="../../assets/images/products/monitor2.jpg" alt="Curved Monitor">
-                <p>Immersive curved monitors for an enhanced viewing experience.</p>
+            <div class="product">
+                <h2>4K Displays</h2>
+                <p>Ultra HD 4K displays for stunning visual clarity.</p>
+                <img src="../../assets/images/products/4k-display.jpg" alt="4K Display">
             </div>
-        </section>
-        <section class="brands">
-            <h2>Featured Brands</h2>
-            <div class="brand-logos">
-                <img src="../../assets/images/brands/samsung.png" alt="Samsung">
-                <img src="../../assets/images/brands/lg.png" alt="LG">
-                <img src="../../assets/images/brands/dell.png" alt="Dell">
+            <div class="product">
+                <h2>Touchscreen Monitors</h2>
+                <p>Interactive touchscreen monitors for enhanced productivity.</p>
+                <img src="../../assets/images/products/touchscreen-monitor.jpg" alt="Touchscreen Monitor">
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <?php include('../components/footer.html'); ?>
+    <div include-html="../../components/footer.html"></div>
 </body>
 </html>

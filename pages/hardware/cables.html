@@ -3,40 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNTSecurity - Cables</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/layout/main.css">
     <link rel="stylesheet" href="../../assets/css/components/navbar.css">
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
-    <link rel="stylesheet" href="../../assets/css/pages/cables.css">
-    <title>Cables - GNTSecurity</title>
+    <link rel="stylesheet" href="../../assets/css/pages/hardware.css">
+    <script src="../../assets/js/components/load.js" defer></script>
 </head>
 <body>
-    <!-- Header -->
-    <?php include('../components/header.html'); ?>
+    <div include-html="../../components/header.html"></div>
 
     <main>
-        <section class="hero">
+        <section class="content">
             <h1>Cables</h1>
             <p>Discover our wide range of high-quality cables for all your connectivity needs.</p>
-        </section>
-        <section class="product-grid">
             <div class="product">
-                <img src="../../assets/images/products/cable1.jpg" alt="Cable 1">
                 <h2>HDMI Cables</h2>
                 <p>High-speed HDMI cables for superior video and audio quality.</p>
+                <img src="../../assets/images/products/hdmi-cable.jpg" alt="HDMI Cable">
             </div>
             <div class="product">
-                <img src="../../assets/images/products/cable2.jpg" alt="Cable 2">
                 <h2>USB Cables</h2>
                 <p>Durable USB cables for fast data transfer and charging.</p>
+                <img src="../../assets/images/products/usb-cable.jpg" alt="USB Cable">
             </div>
             <div class="product">
-                <img src="../../assets/images/products/cable3.jpg" alt="Cable 3">
                 <h2>Ethernet Cables</h2>
                 <p>Reliable Ethernet cables for stable network connections.</p>
+                <img src="../../assets/images/products/ethernet-cable.jpg" alt="Ethernet Cable">
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <?php include('../components/footer.html'); ?>
+    <div include-html="../../components/footer.html"></div>
 </body>
 </html>

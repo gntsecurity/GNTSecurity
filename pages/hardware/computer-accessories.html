@@ -3,43 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNTSecurity - Computer Accessories</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/layout/main.css">
     <link rel="stylesheet" href="../../assets/css/components/navbar.css">
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
-    <link rel="stylesheet" href="../../assets/css/pages/computer-accessories.css">
-    <title>Computer Accessories - GNTSecurity</title>
+    <link rel="stylesheet" href="../../assets/css/pages/hardware.css">
+    <script src="../../assets/js/components/load.js" defer></script>
 </head>
 <body>
-    <!-- Header -->
-    <?php include('../components/header.html'); ?>
+    <div include-html="../../components/header.html"></div>
 
     <main>
-        <section class="hero">
+        <section class="content">
             <h1>Computer Accessories</h1>
-            <p>Enhance your computing experience with our top-quality accessories.</p>
-        </section>
-        <section class="featured-products">
-            <div class="featured-product">
-                <img src="../../assets/images/products/accessory1.jpg" alt="Accessory 1">
+            <p>Explore our extensive range of computer accessories to enhance your computing experience.</p>
+            <div class="product">
                 <h2>Keyboards</h2>
-                <p>Ergonomic keyboards for comfortable typing.</p>
+                <p>High-quality keyboards for comfortable typing.</p>
+                <img src="../../assets/images/products/keyboard.jpg" alt="Keyboard">
             </div>
-            <div class="featured-product">
-                <img src="../../assets/images/products/accessory2.jpg" alt="Accessory 2">
+            <div class="product">
                 <h2>Mice</h2>
                 <p>Precision mice for smooth navigation.</p>
+                <img src="../../assets/images/products/mouse.jpg" alt="Mouse">
             </div>
-        </section>
-        <section class="accessories-list">
-            <ul>
-                <li><a href="#">Webcams</a></li>
-                <li><a href="#">Speakers</a></li>
-                <li><a href="#">Headsets</a></li>
-                <li><a href="#">Docking Stations</a></li>
-            </ul>
+            <div class="product">
+                <h2>Webcams</h2>
+                <p>Clear and reliable webcams for video conferencing.</p>
+                <img src="../../assets/images/products/webcam.jpg" alt="Webcam">
+            </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <?php include('../components/footer.html'); ?>
+    <div include-html="../../components/footer.html"></div>
 </body>
 </html>

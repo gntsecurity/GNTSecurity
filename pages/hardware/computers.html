@@ -3,43 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNTSecurity - Computers</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/layout/main.css">
     <link rel="stylesheet" href="../../assets/css/components/navbar.css">
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
-    <link rel="stylesheet" href="../../assets/css/pages/computers.css">
-    <title>Computers - GNTSecurity</title>
+    <link rel="stylesheet" href="../../assets/css/pages/hardware.css">
+    <script src="../../assets/js/components/load.js" defer></script>
 </head>
 <body>
-    <!-- Header -->
-    <?php include('../components/header.html'); ?>
+    <div include-html="../../components/header.html"></div>
 
     <main>
-        <section class="hero">
+        <section class="content">
             <h1>Computers</h1>
-            <p>Find the perfect computer for your needs, from desktops to laptops.</p>
-        </section>
-        <section class="computers-category">
-            <div class="category">
+            <p>Discover our range of high-performance computers for all your needs.</p>
+            <div class="product">
                 <h2>Desktops</h2>
-                <img src="../../assets/images/products/desktop.jpg" alt="Desktops">
-                <p>Powerful desktops for professional and personal use.</p>
+                <p>Powerful desktop computers for home and office use.</p>
+                <img src="../../assets/images/products/desktop.jpg" alt="Desktop Computer">
             </div>
-            <div class="category">
+            <div class="product">
                 <h2>Laptops</h2>
-                <img src="../../assets/images/products/laptop.jpg" alt="Laptops">
-                <p>Portable laptops with high performance and battery life.</p>
+                <p>Portable and powerful laptops for productivity on the go.</p>
+                <img src="../../assets/images/products/laptop.jpg" alt="Laptop">
             </div>
-        </section>
-        <section class="accessories">
-            <h2>Accessories</h2>
-            <ul>
-                <li><a href="#">External Hard Drives</a></li>
-                <li><a href="#">Laptop Bags</a></li>
-                <li><a href="#">Cooling Pads</a></li>
-            </ul>
+            <div class="product">
+                <h2>Workstations</h2>
+                <p>High-performance workstations for demanding applications.</p>
+                <img src="../../assets/images/products/workstation.jpg" alt="Workstation">
+            </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <?php include('../components/footer.html'); ?>
+    <div include-html="../../components/footer.html"></div>
 </body>
 </html>
