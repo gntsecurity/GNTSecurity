@@ -78,6 +78,8 @@ footer {
 .footer-bottom {
     border-top: 1px solid #ddd;
     padding-top: 10px;
+    justify-content: space-between; /* Ensure the contact and legal sections are aligned properly */
+    width: 100%;
 }
 
 .footer-contact,
@@ -92,4 +94,9 @@ footer {
 
 .footer-legal a:hover {
     text-decoration: underline;
+}
+
+.footer-main {
+    justify-content: space-around; /* Ensure footer columns are aligned at the top */
+    align-items: flex-start;
 }
