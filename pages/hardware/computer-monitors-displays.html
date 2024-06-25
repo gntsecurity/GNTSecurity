@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,34 +12,63 @@
     <link rel="stylesheet" href="../../assets/css/layout/main.css">
     <link rel="stylesheet" href="../../assets/css/components/navbar.css">
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
-    <link rel="stylesheet" href="../../assets/css/pages/hardware.css">
+    <link rel="stylesheet" href="../../assets/css/pages/computer-monitors-displays.css">
     <script src="../../assets/js/components/load.js" defer></script>
 </head>
+
 <body>
     <div include-html="../../components/header.html"></div>
 
     <main>
-        <section class="content">
+        <section class="hero">
             <h1>Computer Monitors & Displays</h1>
-            <p>Enhance your computing experience with our wide range of monitors and displays.</p>
-            <div class="product">
-                <h2>LED Monitors</h2>
-                <p>High-definition LED monitors for clear and vibrant displays.</p>
-                <img src="../../assets/images/products/led-monitor.jpg" alt="LED Monitor">
+            <p>Discover everything you need to know about computer monitors and display units. Learn about different types of connectors, resolution, and more to find the perfect monitor for your needs.</p>
+        </section>
+
+        <section class="content">
+            <h2>Types of Display Connectors</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <h3>HDMI</h3>
+                    <img src="../../assets/images/products/hdmi.jpg" alt="HDMI Cable">
+                    <p>High-Definition Multimedia Interface (HDMI) is a proprietary audio/video interface for transmitting uncompressed video data and compressed or uncompressed digital audio data from an HDMI-compliant source device to a compatible computer monitor, video projector, digital television, or digital audio device.</p>
+                </div>
+                <div class="product">
+                    <h3>DisplayPort</h3>
+                    <img src="../../assets/images/products/dp.jpg" alt="DisplayPort Cable">
+                    <p>DisplayPort is a digital display interface developed by a consortium of PC and chip manufacturers. It is primarily used to connect a video source to a display device such as a computer monitor, and it can also carry audio, USB, and other forms of data.</p>
+                </div>
+                <div class="product">
+                    <h3>VGA</h3>
+                    <img src="../../assets/images/products/vga.jpg" alt="VGA Cable">
+                    <p>Video Graphics Array (VGA) is a standard connector used for computer video output. VGA connectors and cables carry analog signals, which can limit the display resolution and image quality compared to digital connections.</p>
+                </div>
+                <div class="product">
+                    <h3>DVI</h3>
+                    <img src="../../assets/images/products/dvi.jpg" alt="DVI Cable">
+                    <p>Digital Visual Interface (DVI) is a video display interface developed to transmit uncompressed digital video. DVI can be configured to support multiple modes such as DVI-A (analog only), DVI-D (digital only), and DVI-I (digital and analog).</p>
+                </div>
             </div>
-            <div class="product">
-                <h2>4K Displays</h2>
-                <p>Ultra HD 4K displays for stunning visual clarity.</p>
-                <img src="../../assets/images/products/4k-display.jpg" alt="4K Display">
-            </div>
-            <div class="product">
-                <h2>Touchscreen Monitors</h2>
-                <p>Interactive touchscreen monitors for enhanced productivity.</p>
-                <img src="../../assets/images/products/touchscreen-monitor.jpg" alt="Touchscreen Monitor">
-            </div>
+        </section>
+
+        <section class="resolution">
+            <h2>Understanding Resolution and DPI</h2>
+            <p>Resolution refers to the number of pixels that make up the display image, usually denoted as width x height (e.g., 1920x1080). Higher resolutions mean more pixels, resulting in sharper and clearer images.</p>
+            <p>DPI (Dots Per Inch) indicates the pixel density of a display. Higher DPI values mean higher pixel density, which translates to better image quality, especially on smaller screens.</p>
+        </section>
+
+        <section class="tips">
+            <h2>Tips for Choosing the Right Monitor</h2>
+            <ul>
+                <li>Consider the purpose: Determine if you need a monitor for gaming, professional work, or general use.</li>
+                <li>Check compatibility: Ensure the monitor's connectors match your computer's output ports.</li>
+                <li>Look for adjustable stands: Monitors with adjustable stands provide better ergonomics and comfort.</li>
+                <li>Check reviews and ratings: Look for user reviews and expert ratings to make an informed decision.</li>
+            </ul>
         </section>
     </main>
 
     <div include-html="../../components/footer.html"></div>
 </body>
+
 </html>
