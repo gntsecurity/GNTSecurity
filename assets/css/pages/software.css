@@ -1,70 +1,57 @@
-/* Software Page Styles */
+/* Reset and base styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap');
+@import url('../../assets/css/base/reset.css');
+@import url('../../assets/css/base/typography.css');
 
-.hero {
-    position: relative;
-    width: 100%;
-    height: 30vh;
-    background: url('../../assets/images/banner/software-banner.jpg') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
+/* Layout and main styles */
+@import url('../../assets/css/layout/main.css');
+
+/* Components */
+@import url('../../assets/css/components/navbar.css');
+@import url('../../assets/css/components/footer.css');
+
+/* Page-specific styles */
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
-.hero-content {
-    background: rgba(0, 0, 0, 0.5);
+.content {
     padding: 20px;
-    border-radius: 8px;
 }
 
-.hero-content h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-}
-
-.hero-content p {
-    font-size: 1.2em;
-}
-
-.software-categories {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: #fff;
-}
-
-.category {
-    width: 100%;
-    max-width: 600px;
+.content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2em;
     margin-bottom: 20px;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.category h2 {
-    font-size: 1.8em;
+.content p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.product {
+    margin: 20px 0;
+}
+
+.product h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
     margin-bottom: 10px;
-    color: #333;
 }
 
-.category p {
-    font-size: 1em;
-    color: #666;
+.product p {
+    font-size: 1.1em;
     margin-bottom: 10px;
 }
 
-.category ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    text-align: left;
-}
-
-.category ul li {
-    margin-bottom: 5px;
-    color: #555;
+.product img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
