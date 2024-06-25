@@ -7,16 +7,19 @@
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
     <link rel="stylesheet" href="../../assets/css/pages/research-hub.css">
     <title>Research Hub - GNTSecurity</title>
+    <script src="../../assets/js/components/load.js" defer></script>
+    <script src="../../assets/js/components/search.js" defer></script>
 </head>
 <body>
     <!-- Header -->
-    <?php include('../components/header.html'); ?>
+    <div include-html="../../components/header.html"></div>
 
     <main>
         <section class="hero">
             <div class="hero-content">
                 <h1>Research Everything IT</h1>
-                <input type="text" placeholder="Search the Research Hub">
+                <input type="text" id="search-input" placeholder="Search the Research Hub">
+                <button onclick="performSearch()">Search</button>
                 <div class="hero-icons">
                     <a href="#">Cloud</a>
                     <a href="#">Data Analytics</a>
@@ -35,9 +38,49 @@
             <h2>Read the Latest in the Research Hub</h2>
             <!-- Add relevant content here -->
         </section>
+
+        <section class="search-results" id="search-results">
+            <!-- Search results will be displayed here -->
+        </section>
     </main>
 
     <!-- Footer -->
-    <?php include('../components/footer.html'); ?>
+    <div include-html="../../components/footer.html"></div>
+
+    <script>
+        function performSearch() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const resultsContainer = document.getElementById('search-results');
+            resultsContainer.innerHTML = '';
+
+            if (query) {
+                const pages = [
+                    { title: 'Hardware', url: '/pages/hardware/hardware.html' },
+                    { title: 'Software', url: '/pages/software/software.html' },
+                    { title: 'Services', url: '/pages/services/services.html' },
+                    { title: 'IT Solutions', url: '/pages/it-solutions/it-solutions.html' },
+                    { title: 'Brands', url: '/pages/brands/brands.html' },
+                    { title: 'Research Hub', url: '/pages/research-hub/research-hub.html' },
+                    // Add more pages as needed
+                ];
+
+                let results = [];
+
+                pages.forEach(page => {
+                    fetch(page.url)
+                        .then(response => response.text())
+                        .then(html => {
+                            if (html.toLowerCase().includes(query)) {
+                                results.push(`<a href="${page.url}">${page.title}</a>`);
+                                resultsContainer.innerHTML = results.join('<br>');
+                            }
+                        })
+                        .catch(error => console.error('Error fetching page:', error));
+                });
+            } else {
+                resultsContainer.innerHTML = 'No results found.';
+            }
+        }
+    </script>
 </body>
 </html>
