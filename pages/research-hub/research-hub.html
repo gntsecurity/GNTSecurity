@@ -1,86 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Hub - GNT Security</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/favicon/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../../assets/css/base/reset.css">
+    <link rel="stylesheet" href="../../assets/css/base/typography.css">
+    <link rel="stylesheet" href="../../assets/css/layout/main.css">
     <link rel="stylesheet" href="../../assets/css/components/navbar.css">
     <link rel="stylesheet" href="../../assets/css/components/footer.css">
     <link rel="stylesheet" href="../../assets/css/pages/research-hub.css">
-    <title>Research Hub - GNTSecurity</title>
     <script src="../../assets/js/components/load.js" defer></script>
-    <script src="../../assets/js/components/search.js" defer></script>
 </head>
+
 <body>
-    <!-- Header -->
     <div include-html="../../components/header.html"></div>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Research Everything IT</h1>
-                <input type="text" id="search-input" placeholder="Search the Research Hub">
-                <button onclick="performSearch()">Search</button>
-                <div class="hero-icons">
-                    <a href="#">Cloud</a>
-                    <a href="#">Data Analytics</a>
-                    <a href="#">Data Center</a>
-                    <a href="#">Digital Workspace</a>
-                    <a href="#">Hardware</a>
-                    <a href="#">Networking</a>
-                    <a href="#">Security</a>
-                    <a href="#">Services</a>
-                    <a href="#">Software</a>
-                </div>
+        <section class="research-search">
+            <h1>Research Everything IT</h1>
+            <form>
+                <input type="text" placeholder="Search the Research Hub">
+                <button type="submit">Search</button>
+            </form>
+            <div class="research-categories">
+                <button>Cloud</button>
+                <button>Data Analytics</button>
+                <button>Data Center</button>
+                <button>Digital Workspace</button>
+                <button>Hardware</button>
+                <button>Networking</button>
+                <button>Security</button>
+                <button>Services</button>
+                <button>Software</button>
             </div>
         </section>
 
-        <section class="recently-added">
+        <section class="latest-research">
             <h2>Read the Latest in the Research Hub</h2>
-            <!-- Add relevant content here -->
-        </section>
-
-        <section class="search-results" id="search-results">
-            <!-- Search results will be displayed here -->
+            <div class="research-articles">
+                <!-- Articles can be added here -->
+            </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <div include-html="../../components/footer.html"></div>
 
     <script>
-        function performSearch() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            const resultsContainer = document.getElementById('search-results');
-            resultsContainer.innerHTML = '';
-
-            if (query) {
-                const pages = [
-                    { title: 'Hardware', url: '/pages/hardware/hardware.html' },
-                    { title: 'Software', url: '/pages/software/software.html' },
-                    { title: 'Services', url: '/pages/services/services.html' },
-                    { title: 'IT Solutions', url: '/pages/it-solutions/it-solutions.html' },
-                    { title: 'Brands', url: '/pages/brands/brands.html' },
-                    { title: 'Research Hub', url: '/pages/research-hub/research-hub.html' },
-                    // Add more pages as needed
-                ];
-
-                let results = [];
-
-                pages.forEach(page => {
-                    fetch(page.url)
-                        .then(response => response.text())
-                        .then(html => {
-                            if (html.toLowerCase().includes(query)) {
-                                results.push(`<a href="${page.url}">${page.title}</a>`);
-                                resultsContainer.innerHTML = results.join('<br>');
-                            }
-                        })
-                        .catch(error => console.error('Error fetching page:', error));
-                });
-            } else {
-                resultsContainer.innerHTML = 'No results found.';
-            }
-        }
+        includeHTML();
     </script>
 </body>
+
 </html>
