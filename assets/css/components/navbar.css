@@ -5,6 +5,7 @@
     background-color: #fff;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -15,6 +16,7 @@
 .navbar-links {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .navbar-links a,
