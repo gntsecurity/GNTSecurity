@@ -41,7 +41,7 @@
 }
 
 .cta-button {
-    background-color: #007bff;
+    background-color: #1aaf54; /* Green color for buttons */
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
@@ -51,7 +51,7 @@
 }
 
 .cta-button:hover {
-    background-color: #0056b3;
+    background-color: #148d43; /* Darker green on hover */
 }
 
 .features {
