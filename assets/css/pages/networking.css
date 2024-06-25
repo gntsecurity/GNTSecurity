@@ -1,138 +1,81 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Typography */
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: #333;
-}
-
-/* Layout */
-main {
+.main-content {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.page-title {
+    font-size: 2.5rem;
     text-align: center;
+    color: #004e66;
 }
 
-.hero {
+.subtitle {
+    font-size: 1.25rem;
     text-align: center;
-    background-color: #f4f4f4;
-    padding: 20px 0;
+    color: #006d85;
+    margin-bottom: 20px;
 }
 
-.hero h1 {
-    font-size: 2.5em;
-    color: #004d40; /* Dark green color */
-    margin-bottom: 10px;
+.networking-section {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-.hero p {
-    font-size: 1.2em;
-    color: #555;
+.networking-section h2 {
+    font-size: 2rem;
+    color: #004e66;
+    margin-bottom: 20px;
 }
 
-.networking-overview,
-.networking-components,
-.networking-tips,
-.networking-troubleshooting,
-.networking-support {
-    margin: 20px 0;
-}
-
-.networking-overview h2,
-.networking-components h2,
-.networking-tips h2,
-.networking-troubleshooting h2,
-.networking-support h2 {
-    font-size: 1.8em;
-    color: #004d40; /* Dark green color */
-    margin-bottom: 10px;
-}
-
-.networking-overview p,
-.networking-tips ul,
-.networking-troubleshooting ul,
-.networking-support p {
-    margin: 10px 0;
-}
-
-.component-grid {
+.networking-components .component-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
 }
 
-.networking-component {
-    flex: 1 1 calc(33% - 20px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 10px;
+.networking-components .component {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     padding: 20px;
-    border-radius: 10px;
-    background-color: #fff;
-    text-align: center;
+    max-width: 300px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.networking-component h3 {
-    font-size: 1.5em;
-    color: #004d40; /* Dark green color */
-    margin-bottom: 10px;
-}
-
-.networking-component img {
+.networking-components .component img {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
 }
 
-.networking-component p {
-    font-size: 1em;
-    color: #555;
+.networking-components .component h3 {
+    font-size: 1.5rem;
+    color: #004e66;
+    margin-bottom: 10px;
 }
 
-.networking-tips ul,
-.networking-troubleshooting ul {
-    list-style: disc;
-    padding-left: 20px;
+.networking-components .component p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.networking-tips {
     text-align: left;
-    display: inline-block;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.networking-tips ul li,
-.networking-troubleshooting ul li {
-    margin: 5px 0;
-}
-
-.networking-support ul {
+.networking-tips ul {
     list-style: none;
-    padding-left: 0;
-    text-align: left;
-    display: inline-block;
+    padding: 0;
 }
 
-.networking-support ul li {
-    margin: 5px 0;
-    font-weight: bold;
-}
-
-/* Footer */
-footer {
-    background-color: #004d40; /* Dark green color */
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
+.networking-tips ul li {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
 }
