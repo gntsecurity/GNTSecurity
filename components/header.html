@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="/assets/css/components/navbar.css">
     <link rel="stylesheet" href="/assets/css/components/footer.css">
     <title>GNTSecurity</title>
+    <!-- Include the search JavaScript file -->
+    <script src="/assets/js/components/search.js" defer></script>
 </head>
 <body>
     <header>
@@ -97,8 +99,9 @@
                 <a href="/pages/research-hub/research-hub.html" class="dropdown-link">Research Hub</a>
             </div>
             <div class="navbar-icons">
-                <input type="text" placeholder="What can we help you find today?">
-                <button>Search</button>
+                <!-- Updated search input and button -->
+                <input type="text" id="search-input" placeholder="What can we help you find today?">
+                <button id="search-button">Search</button>
                 <a href="#"><img src="/assets/images/icons/notifications.png" alt="Notifications"></a>
                 <a href="#"><img src="/assets/images/icons/signin.png" alt="Sign In"></a>
                 <a href="#"><img src="/assets/images/icons/cart.png" alt="Cart"></a>
