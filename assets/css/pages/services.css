@@ -1,57 +1,64 @@
-/* Reset and base styles */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap');
-@import url('../../assets/css/base/reset.css');
-@import url('../../assets/css/base/typography.css');
+/* Services Page Styles */
 
-/* Layout and main styles */
-@import url('../../assets/css/layout/main.css');
-
-/* Components */
-@import url('../../assets/css/components/navbar.css');
-@import url('../../assets/css/components/footer.css');
-
-/* Page-specific styles */
-body {
-    font-family: 'Roboto', sans-serif;
+.hero {
+    background-image: url('../images/hero/services-banner.jpg');
+    background-size: cover;
+    text-align: center;
+    padding: 80px 20px;
+    color: white;
 }
 
-.content {
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+.service-card {
     padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.content h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 2em;
-    margin-bottom: 20px;
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.learn-more {
+    color: #1aaf54;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.learn-more:hover {
+    color: #148d43;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 40px;
+    background-color: #f1f1f1;
     text-align: center;
 }
 
-.content p {
+.testimonial {
+    margin: 20px auto;
+    max-width: 600px;
     font-size: 1.1em;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.service {
-    margin: 20px 0;
-}
-
-.service h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.service p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-}
-
-.service img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+    color: #555;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
