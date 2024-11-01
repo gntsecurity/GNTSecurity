@@ -3,72 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GNTSecurity - Home</title>
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon/favicon.ico">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap">
-    <link rel="stylesheet" href="assets/css/base/reset.css">
-    <link rel="stylesheet" href="assets/css/base/typography.css">
-    <link rel="stylesheet" href="assets/css/layout/main.css">
-    <link rel="stylesheet" href="assets/css/components/navbar.css">
-    <link rel="stylesheet" href="assets/css/components/footer.css">
-    <link rel="stylesheet" href="assets/css/pages/home.css">
-    <script src="assets/js/components/load.js" defer></script>
+    <title>Gage Smith | Professional Resume</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" href="assets/images/favicon/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div include-html="components/header.html"></div>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <img src="assets/images/logo/logo.png" alt="Gage Smith Logo" class="logo">
+            <nav class="navbar">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#references">References</a>
+                <a href="#contact">Contact</a>
+                <a href="assets/resume/Gage-Smith.pdf" target="_blank" class="resume-link">Download Resume</a>
+            </nav>
+        </div>
+    </header>
 
-    <main>
-        <section class="hero">
-            <video autoplay muted loop class="hero-video">
-                <source src="assets/images/videos/hero.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="hero-content">
-                <h1>Welcome to GNTSecurity</h1>
-                <p>Your trusted partner in IT security solutions.</p>
-                <a href="pages/services/services.html" class="cta-button">Our Services</a>
-            </div>
-        </section>
-        <section class="features">
-            <div class="feature">
-                <h2>Professional Services</h2>
-                <p>We offer a range of professional IT security services tailored to meet your needs.</p>
-            </div>
-            <div class="feature">
-                <h2>Quality Products</h2>
-                <p>Our products are sourced from top manufacturers to ensure quality and reliability.</p>
-            </div>
-            <div class="feature">
-                <h2>Customer Support</h2>
-                <p>Our dedicated support team is here to help you with any issues you may face.</p>
-            </div>
-        </section>
-        <section class="testimonials">
-            <h2>What Our Clients Say</h2>
-            <div class="testimonial">
-                <p>"GNTSecurity provided excellent service and top-notch security solutions. Highly recommended!"</p>
-                <cite>- Devin Cobey, Plant Manager</cite>
-            </div>
-            <div class="testimonial">
-                <p>"The products and support from GNTSecurity are unmatched in the industry."</p>
-                <cite>- Alex Webb, IT Manager</cite>
-            </div>
-        </section>
-        <section class="blog">
-            <h2>From Our Blog</h2>
-            <div class="blog-post">
-                <h3>Understanding IT Security Basics</h3>
-                <p>Learn the fundamentals of IT security and how to protect your business.</p>
-                <a href="blog/it-security-basics.html">Read More</a>
-            </div>
-            <div class="blog-post">
-                <h3>Top 5 Security Products in 2024</h3>
-                <p>Discover the best security products available this year.</p>
-                <a href="blog/top-security-products-2024.html">Read More</a>
-            </div>
-        </section>
-    </main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <p class="hero-subtitle">IT Systems Administrator | Cybersecurity Specialist | Developer</p>
+            <a href="assets/resume/Gage-Smith.pdf" target="_blank" class="primary-btn">View My Resume</a>
+        </div>
+    </section>
 
-    <div include-html="components/footer.html"></div>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am an experienced IT Systems Administrator with a passion for solving complex technical challenges and creating efficient solutions. My expertise spans system administration, cybersecurity, software development, and team leadership.</p>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <h2>Work Experience</h2>
+            <div class="experience-item">
+                <h3>IT Systems Administrator</h3>
+                <p><strong>Angstrom Fiber Englewood, LLC</strong> - Englewood, OH</p>
+                <p>Present</p>
+                <p>Managed IT infrastructure, implemented cybersecurity measures, and streamlined system operations for enhanced productivity.</p>
+            </div>
+            <div class="experience-item">
+                <h3>Supervisor, Materials</h3>
+                <p><strong>Angstrom Fiber Englewood, LLC</strong> - Englewood, OH</p>
+                <p>2020 - 2022</p>
+                <p>Oversaw shipping and receiving operations, ensuring customer requirements were consistently met, while managing EDI operations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>System Administration</li>
+                <li>Cybersecurity</li>
+                <li>IT Operations</li>
+                <li>Microsoft Azure</li>
+                <li>Web Development (HTML, CSS, JavaScript)</li>
+                <li>Network Security</li>
+                <li>Leadership & Team Management</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- References Section -->
+    <section class="references" id="references">
+        <div class="container">
+            <h2>References</h2>
+            <div class="reference-item">
+                <p><strong>Michael Doyle</strong><br>
+                   Plant Manager - Angstrom Fiber Englewood LLC<br>
+                   <a href="mailto:mdoyle@angstrom-usa.com">mdoyle@angstrom-usa.com</a><br>
+                   <a href="tel:+17348914341">+1 (734) 891-4341</a>
+                </p>
+            </div>
+            <div class="reference-item">
+                <p><strong>Jackie Stewart</strong><br>
+                   HR Admin - Angstrom Fiber Englewood LLC<br>
+                   <a href="mailto:jstewart@angstrom-usa.com">jstewart@angstrom-usa.com</a><br>
+                   <a href="tel:+19375409889">+1 (937) 540-9889</a>
+                </p>
+            </div>
+            <div class="reference-item">
+                <p><strong>Jody Carter</strong><br>
+                   Plant Controller - Angstrom Fiber Englewood LLC<br>
+                   <a href="mailto:jcarter@angstrom-usa.com">jcarter@angstrom-usa.com</a><br>
+                   <a href="tel:+19375409889">+1 (937) 540-9889</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:gsmith@gntsecurity.com">gsmith@gntsecurity.com</a></p>
+            <p>Phone: <a href="tel:+19374744428">+1 (937) 474-4428</a></p>
+            <p>Location: Dayton, OH</p>
+            <div class="contact-links">
+                <a href="https://github.com/gntsecurity" alt="GitHub">
+                    <img src="assets/images/icons/github.png" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/gage-smith-889764297" alt="Linkedin">
+                    <img src="assets/images/icons/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Gage Smith. All rights reserved.</p>
+    </footer>
 </body>
 </html>
