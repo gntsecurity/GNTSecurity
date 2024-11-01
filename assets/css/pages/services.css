@@ -1,0 +1,64 @@
+/* Services Page Styles */
+
+.hero {
+    background-image: url('../images/hero/services-banner.jpg');
+    background-size: cover;
+    text-align: center;
+    padding: 80px 20px;
+    color: white;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+.service-card {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.learn-more {
+    color: #1aaf54;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.learn-more:hover {
+    color: #148d43;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 40px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.testimonial {
+    margin: 20px auto;
+    max-width: 600px;
+    font-size: 1.1em;
+    color: #555;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
