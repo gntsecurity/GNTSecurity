@@ -96,6 +96,46 @@ h2 {
     padding-bottom: 0.5rem;
 }
 
+/* Timeline for Experience Section */
+.timeline {
+    margin-top: 2rem;
+}
+
+.timeline-item {
+    background-color: #2C2F36;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-4px);
+}
+
+.timeline-item h3 {
+    font-size: 1.3rem;
+    color: #69A1FF;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item p {
+    line-height: 1.6;
+    color: #C0C4CF;
+}
+
+.timeline-item strong {
+    color: #EDEDED;
+}
+
+.timeline-item .timeline-dates {
+    font-weight: bold;
+    color: #A0A4A8;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
 /* Skills Section */
 .skills ul {
     list-style: none;
@@ -196,11 +236,11 @@ footer {
     }
 
     .navbar {
-        display: none; /* Hide by default on mobile */
+        display: none;
     }
 
     .navbar.active {
-        display: flex; /* Show navbar when toggled */
+        display: flex;
         flex-direction: column;
         gap: 10px;
     }
@@ -243,7 +283,7 @@ footer {
 
 @media (max-width: 480px) {
     .logo {
-        max-width: 80px; /* Smaller logo for mobile */
+        max-width: 80px;
     }
 
     .navbar {
