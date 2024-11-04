@@ -16,8 +16,6 @@
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
                 <a href="#skills">Skills</a>
-                <a href="#references">References</a>
-                <a href="#contact">Contact</a>
                 <a href="assets/resume/Gage-Smith.pdf" target="_blank" class="resume-link">Download Resume</a>
             </nav>
         </div>
@@ -26,7 +24,9 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
+            <h1>Gage Smith</h1>
             <p class="hero-subtitle">Capable and Team-Driven Leader | IT and Operations Specialist</p>
+            <p class="hero-summary">An experienced IT and operations specialist with expertise in ERP, EDI, and network management, driven to improve efficiency and enhance teamwork in a professional environment.</p>
             <a href="assets/resume/Gage-Smith.pdf" target="_blank" class="primary-btn">View My Resume</a>
         </div>
     </section>
@@ -35,7 +35,10 @@
     <section class="about" id="about">
         <div class="container">
             <h2>About Me</h2>
-            <p>I am a capable and team-driven leader with a diverse background in IT, customer service, distribution, and manufacturing. With strong skills in ERP systems, EDI, and Microsoft Project, I bring a comprehensive approach to both technical and operational roles. I currently manage IT infrastructure for both the Englewood, OH, and Brantford, ON locations, overseeing IT operations for both business units. My goal is to leverage my varied skills to drive efficiency, improve systems, and enhance teamwork in a professional environment.</p>
+            <div class="about-content">
+                <img src="assets/images/me/gagesmith.jpg" alt="Gage Smith" class="profile-image">
+                <p>I am a capable and team-driven leader with a diverse background in IT, customer service, distribution, and manufacturing. With strong skills in ERP systems, EDI, and Microsoft Project, I bring a comprehensive approach to both technical and operational roles. I currently manage IT infrastructure for both the Englewood, OH, and Brantford, ON locations, overseeing IT operations for both business units. My goal is to leverage my varied skills to drive efficiency, improve systems, and enhance teamwork in a professional environment.</p>
+            </div>
         </div>
     </section>
 
@@ -83,45 +86,61 @@
         <div class="container">
             <h2>Skills</h2>
             <ul>
-                <li>IT & Network Management
-                    <div class="skill-bar"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+                <li>
+                    <span class="skill-name">IT & Network Management</span>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="width: 80%;">80%</div>
+                    </div>
                 </li>
-                <li>Leadership & Team Coordination
-                    <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+                <li>
+                    <span class="skill-name">Leadership & Team Coordination</span>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="width: 85%;">85%</div>
+                    </div>
                 </li>
-                <li>Shipping & Receiving Operations
-                    <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+                <li>
+                    <span class="skill-name">Shipping & Receiving Operations</span>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="width: 75%;">75%</div>
+                    </div>
                 </li>
-                <li>Customer Service & EDI
-                    <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+                <li>
+                    <span class="skill-name">Customer Service & EDI</span>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="width: 70%;">70%</div>
+                    </div>
                 </li>
-                <li>PLEX Online Manufacturing Cloud (ERP System)
-                    <div class="skill-bar"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+                <li>
+                    <span class="skill-name">PLEX Online Manufacturing Cloud (ERP System)</span>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="width: 80%;">80%</div>
+                    </div>
                 </li>
-                <li>Microsoft Project
-                    <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+                <li>
+                    <span class="skill-name">Microsoft Project</span>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="width: 85%;">85%</div>
+                    </div>
                 </li>
             </ul>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <form action="mailto:gsmith@gntsecurity.com" method="post" enctype="text/plain">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required>
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                <button type="submit" class="primary-btn">Send Message</button>
-            </form>
-        </div>
+    <!-- References Button and Popup -->
+    <section class="references-section">
+        <button class="primary-btn references-btn" id="references-btn">View References</button>
     </section>
+    <div class="popup-overlay" id="popup-overlay">
+        <div class="popup-content">
+            <h3>References</h3>
+            <ul>
+                <li><strong>Michael Doyle</strong>, Plant Manager - 734-891-4341, mdoyle@angstrom-usa.com</li>
+                <li><strong>Jackie Stewart</strong>, HR Admin - 937-540-9889, jstewart@angstrom-usa.com</li>
+                <li><strong>Jody Carter</strong>, Plant Controller - 937-540-9889, jcarter@angstrom-usa.com</li>
+            </ul>
+            <button class="primary-btn close-btn" id="close-btn">Close</button>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2024 Gage Smith | All rights reserved.</p>
@@ -135,7 +154,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript to Toggle Navbar on Mobile -->
+    <!-- JavaScript -->
     <script src="assets/js/scripts.js"></script>
 </body>
 </html>
