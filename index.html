@@ -31,6 +31,13 @@
         </div>
     </section>
 
+    <!-- Personal Statement Section -->
+    <section class="personal-statement">
+        <div class="container">
+            <p>Driven IT Systems Administrator passionate about optimizing systems and securing data to propel business success.</p>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
@@ -39,38 +46,57 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience Section with Interactive Timeline -->
     <section class="experience" id="experience">
         <div class="container">
             <h2>Work Experience</h2>
-            <div class="experience-item">
-                <h3>IT Systems Administrator</h3>
-                <p><strong>Angstrom Fiber Englewood, LLC</strong> - Englewood, OH</p>
-                <p>Present</p>
-                <p>Managed IT infrastructure, implemented cybersecurity measures, and streamlined system operations for enhanced productivity.</p>
-            </div>
-            <div class="experience-item">
-                <h3>Supervisor, Materials</h3>
-                <p><strong>Angstrom Fiber Englewood, LLC</strong> - Englewood, OH</p>
-                <p>2020 - 2022</p>
-                <p>Oversaw shipping and receiving operations, ensuring customer requirements were consistently met, while managing EDI operations.</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>IT Systems Administrator</h3>
+                    <p><strong>Angstrom Fiber Englewood, LLC</strong> - Englewood, OH</p>
+                    <p>Present</p>
+                    <p>Led efforts in securing network infrastructure, improving system efficiency.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Supervisor, Materials</h3>
+                    <p><strong>Angstrom Fiber Englewood, LLC</strong> - Englewood, OH</p>
+                    <p>2020 - 2022</p>
+                    <p>Managed logistics to streamline shipping and receiving operations.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills Section with Proficiency Indicators -->
     <section class="skills" id="skills">
         <div class="container">
             <h2>Skills</h2>
             <ul>
-                <li>System Administration</li>
-                <li>Cybersecurity</li>
-                <li>IT Operations</li>
-                <li>Microsoft Azure</li>
-                <li>Web Development (HTML, CSS, JavaScript)</li>
-                <li>Network Security</li>
-                <li>Leadership & Team Management</li>
+                <li>System Administration
+                    <div class="skill-bar" style="width: 76%;"></div>
+                </li>
+                <li>Cybersecurity
+                    <div class="skill-bar" style="width: 70%;"></div>
+                </li>
+                <li>Microsoft Azure
+                    <div class="skill-bar" style="width: 80%;"></div>
+                </li>
+                <!-- Add more skills with proficiency levels as needed -->
             </ul>
+            <h3>Technical Skills</h3>
+            <div class="technical-skills">
+                <p><strong>Languages & Tools:</strong> HTML, CSS, JavaScript, PHP, Python</p>
+                <p><strong>Platforms:</strong> Microsoft Azure, AWS, GitHub</p>
+                <p><strong>Security & Networking:</strong> Firewall Management, VPNs, Network Security Protocols</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications">
+        <div class="container">
+            <h2>Certifications & Training</h2>
+            <p>Explore my completed courses on <a href="https://www.coursera.org/user/3a96f820984cc17f095cbdb3b70a5755" target="_blank">Coursera</a>.</p>
         </div>
     </section>
 
@@ -102,27 +128,35 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section with Contact Form -->
     <section class="contact" id="contact">
         <div class="container">
             <h2>Contact Me</h2>
+            <form action="mailto:gsmith@gntsecurity.com" method="post" enctype="text/plain">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+                
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit" class="primary-btn">Send Message</button>
+            </form>
+            <p>Or reach out directly:</p>
             <p>Email: <a href="mailto:gsmith@gntsecurity.com">gsmith@gntsecurity.com</a></p>
             <p>Phone: <a href="tel:+19374744428">+1 (937) 474-4428</a></p>
             <p>Location: Dayton, OH</p>
-            <div class="contact-links">
-                <a href="https://github.com/" target="_blank">
-                    <img src="assets/images/icons/github.png" alt="GitHub">
-                </a>
-                <a href="https://www.linkedin.com/" target="_blank">
-                    <img src="assets/images/icons/linkedin.png" alt="LinkedIn">
-                </a>
-            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2023 Gage Smith. All rights reserved.</p>
+        <p>&copy; 2024 Gage Smith | All rights reserved.</p>
     </footer>
 </body>
 </html>
