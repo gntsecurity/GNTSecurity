@@ -10,24 +10,16 @@
 <body>
     <!-- Header Section -->
     <header class="header">
-        <div class="container">
+        <div class="container header-container">
             <img src="assets/images/logo/logo.png" alt="Gage Smith Logo" class="logo" id="menu-toggle">
-            <div class="navbar-container" id="navbar-container">
-                <nav class="navbar">
-                    <a href="#about">About</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#references">References</a>
-                    <a href="#contact">Contact</a>
-                    <a href="assets/resume/Gage-Smith.pdf" target="_blank" class="resume-link">Download Resume</a>
-                </nav>
-                <div class="contact-info">
-                    <a href="tel:+19374744428">+1 (937) 474-4428</a> |
-                    <a href="mailto:gsmith@gntsecurity.com">gsmith@gntsecurity.com</a> |
-                    <a href="https://github.com/gntsecurity" target="_blank">GitHub</a> |
-                    <a href="https://www.linkedin.com/in/gage-smith-889764297" target="_blank">LinkedIn</a>
-                </div>
-            </div>
+            <nav class="navbar">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#references">References</a>
+                <a href="#contact">Contact</a>
+                <a href="assets/resume/Gage-Smith.pdf" target="_blank" class="resume-link">Download Resume</a>
+            </nav>
         </div>
     </header>
 
@@ -106,13 +98,21 @@
 
     <footer>
         <p>&copy; 2024 Gage Smith | All rights reserved.</p>
+        <div class="contact-info">
+            <p>
+                <a href="tel:+19374744428">+1 (937) 474-4428</a> |
+                <a href="mailto:gsmith@gntsecurity.com">gsmith@gntsecurity.com</a> |
+                <a href="https://github.com/gntsecurity" target="_blank">GitHub</a> |
+                <a href="https://www.linkedin.com/in/gage-smith-889764297" target="_blank">LinkedIn</a>
+            </p>
+        </div>
     </footer>
 
     <!-- JavaScript to Toggle Navbar on Mobile -->
     <script>
         document.getElementById('menu-toggle').addEventListener('click', function() {
-            const navbarContainer = document.getElementById('navbar-container');
-            navbarContainer.classList.toggle('active');
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
         });
     </script>
 </body>

@@ -26,7 +26,13 @@ body {
     text-align: center;
 }
 
-/* Logo Styling */
+/* Logo and Navbar Styling */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .logo {
     max-width: 120px;
     width: 100%;
@@ -34,20 +40,10 @@ body {
     cursor: pointer; /* Make logo look clickable */
 }
 
-/* Navbar Container Styling */
-.navbar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 0.5rem;
 }
 
 .navbar a {
@@ -61,20 +57,20 @@ body {
     color: #69A1FF;
 }
 
-/* Contact Info */
-.contact-info {
-    text-align: center;
-    font-size: 0.85rem;
-    color: #C0C4CF;
-}
-
 /* Hide Navbar for Mobile */
 @media (max-width: 768px) {
-    .navbar-container {
+    .navbar {
         display: none; /* Hide by default */
     }
-    .navbar-container.active {
+    .navbar.active {
         display: flex; /* Show when toggled */
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -86,5 +82,47 @@ body {
     padding: 4rem 0;
 }
 
-/* Remaining Styles... */
-/* Your existing styles continue here */
+/* Primary Button */
+.primary-btn {
+    background-color: #69A1FF;
+    padding: 0.8rem 2.5rem;
+    color: #1C1F26;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.primary-btn:hover {
+    background-color: #517AC1;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #2A2F38;
+    color: #AAAAAA;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+.contact-info {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #C0C4CF;
+    margin-top: 0.5rem;
+}
+
+.contact-info a {
+    color: #69A1FF;
+    text-decoration: none;
+    margin: 0 0.3rem;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
