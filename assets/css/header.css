@@ -1,0 +1,31 @@
+.header {
+    background: #2A2F38;
+    padding: 1rem 0;
+    border-bottom: 3px solid #3A3F48;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    max-width: 120px;
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar a, .download-resume {
+    color: #EDEDED;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
