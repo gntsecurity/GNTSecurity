@@ -1,3 +1,5 @@
+/* hero.css */
+
 .hero {
     text-align: center;
     background-color: #1A1D23;
@@ -8,7 +10,11 @@
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    color: #69A1FF;
+    color: #F8F8FF; /* Ghost White for 'Hi, I'm' */
+}
+
+.hero h1 span {
+    color: #69A1FF; /* Original color for 'Gage Smith' */
 }
 
 .hero-subtitle {
@@ -30,14 +36,6 @@
     padding: 0.8rem 2.5rem;
     text-transform: uppercase;
     font-weight: bold;
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 1.5rem;
-}
-
-.primary-btn:hover {
-    background-color: #517AC1;
-    transform: scale(1.05);
+    border-radius: 5px;
+    text-decoration: none;
 }
