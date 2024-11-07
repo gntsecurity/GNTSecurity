@@ -1,5 +1,3 @@
-/* experience.css */
-
 .experience {
     padding: 4rem 0;
     text-align: center;
@@ -13,7 +11,8 @@
 
 .experience-cards {
     display: flex;
-    gap: 0px; /* Ensure cards are touching */
+    gap: 1.5rem; /* Updated gap for better mobile spacing */
+    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -22,7 +21,7 @@
     height: 320px;
     perspective: 1000px;
     position: relative;
-    border-radius: 0px;
+    border-radius: 10px;
     overflow: hidden;
     flex-shrink: 0;
 }
@@ -40,8 +39,8 @@
 
 .experience-front img {
     width: 100%;
-    height: auto; /* Ensure images retain their original aspect ratio */
-    object-fit: contain; /* Display the full image without cropping */
+    height: auto;
+    object-fit: contain;
 }
 
 .experience-card:hover .experience-front {
@@ -61,7 +60,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around; /* Distribute content vertically */
+    justify-content: space-around;
     text-align: center;
 }
 
@@ -69,10 +68,4 @@
     font-weight: bold;
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
-}
-
-.experience-back p {
-    margin: 0.3rem 0;
-    line-height: 1.4;
-    font-size: 0.9rem;
 }
