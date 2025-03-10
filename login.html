@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In - GNTS Signage</title>
+    <title>Login - GNTS Signage</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script defer src="auth.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
@@ -13,6 +15,10 @@
             background: linear-gradient(135deg, #223147 0%, #192234 100%);
             font-family: 'Inter', sans-serif;
             color: #e4eaf5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         .glass-container {
@@ -30,6 +36,7 @@
             font-size: 26px;
             font-weight: 700;
             color: #ffffff;
+            margin-bottom: 20px;
         }
 
         .input-group {
@@ -64,6 +71,8 @@
             transition: all 0.3s ease-in-out;
             width: 100%;
             box-shadow: 0 3px 12px rgba(76, 145, 243, 0.4);
+            cursor: pointer;
+            border: none;
         }
 
         .btn-primary:hover {
@@ -92,7 +101,7 @@
         }
     </style>
 </head>
-<body class="h-screen flex items-center justify-center">
+<body>
 
     <div class="glass-container">
         <h2>Welcome Back</h2>
@@ -108,20 +117,38 @@
         <button id="loginBtn" class="btn-primary mt-4">Log In</button>
 
         <p class="mt-4">
+            Forgot password? <a href="#" id="forgotPassword" class="text-link">Reset here</a>
+        </p>
+
+        <p class="mt-4">
             Don't have an account? <a href="signup.html" class="text-link">Sign Up</a>
         </p>
     </div>
 
     <script type="module">
-        import { login } from "./auth.js";
+        import { login, resetPassword } from "./auth.js";
+
         document.getElementById("loginBtn").onclick = async () => {
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
+
+            if (!email || !password) {
+                alert("Please fill in both fields.");
+                return;
+            }
+
             try {
                 await login(email, password);
                 window.location.href = "dashboard.html";
             } catch (error) {
                 console.error(error);
+            }
+        };
+
+        document.getElementById("forgotPassword").onclick = () => {
+            const email = prompt("Enter your email to reset password:");
+            if (email) {
+                resetPassword(email);
             }
         };
     </script>
