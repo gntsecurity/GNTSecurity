@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - GNTS Signage</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="auth.js"></script>
 </head>
 <body class="h-screen flex items-center justify-center bg-gray-100">
     <div class="bg-white p-8 rounded-lg shadow-lg w-96">
@@ -20,27 +21,22 @@
             <input type="password" id="password" placeholder="Enter your password" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500">
         </div>
         
-        <button onclick="login()" class="w-full mt-6 bg-blue-600 text-white py-3 rounded-lg text-lg hover:bg-blue-700 shadow-md">Login</button>
+        <button id="loginBtn" class="w-full mt-6 bg-blue-600 text-white py-3 rounded-lg text-lg hover:bg-blue-700 shadow-md">Login</button>
     </div>
     
-    <script>
-        function login() {
+    <script type="module">
+        import { login } from "./auth.js";
+
+        document.getElementById("loginBtn").addEventListener("click", async () => {
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
             
-            const storedUser = JSON.parse(localStorage.getItem("userAccount"));
-            
-            if (storedUser && email === storedUser.email && password === storedUser.password) {
-                localStorage.setItem("loggedIn", true);
+            try {
+                const user = await login(email, password);
+                alert("Login successful! Redirecting to dashboard...");
                 window.location.href = "dashboard.html";
-            } else {
-                alert("Invalid credentials or unverified account. Please try again or sign up.");
-            }
-        }
-        
-        document.addEventListener("DOMContentLoaded", function () {
-            if (localStorage.getItem("loggedIn")) {
-                window.location.href = "dashboard.html";
+            } catch (error) {
+                alert("Error: " + error.message);
             }
         });
     </script>
