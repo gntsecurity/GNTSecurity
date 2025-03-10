@@ -62,22 +62,35 @@
             color: #bcc8e4;
         }
 
-        .btn-primary {
-            background: linear-gradient(90deg, #4c91f3, #a36ef7);
+        .btn-primary, .btn-secondary {
             padding: 12px;
             border-radius: 8px;
             font-size: 18px;
             font-weight: 600;
             transition: all 0.3s ease-in-out;
             width: 100%;
-            box-shadow: 0 3px 12px rgba(76, 145, 243, 0.4);
             cursor: pointer;
             border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #4c91f3, #a36ef7);
+            box-shadow: 0 3px 12px rgba(76, 145, 243, 0.4);
         }
 
         .btn-primary:hover {
             box-shadow: 0 0 15px rgba(147, 51, 234, 0.8);
             transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            color: #4c91f3;
+            margin-top: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: #e4eaf5;
         }
 
         .text-link {
@@ -91,14 +104,6 @@
             color: #a36ef7;
         }
 
-        @media (max-width: 768px) {
-            .glass-container {
-                padding: 25px;
-            }
-            .btn-primary {
-                font-size: 16px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -115,9 +120,10 @@
         </div>
 
         <button id="loginBtn" class="btn-primary mt-4">Log In</button>
+        <button id="googleLoginBtn" class="btn-secondary">Sign In with Google</button>
 
         <p class="mt-4">
-            Forgot password? <a href="#" id="forgotPassword" class="text-link">Reset here</a>
+            Forgot password? <a href="forgot-password.html" class="text-link">Reset here</a>
         </p>
 
         <p class="mt-4">
@@ -126,12 +132,11 @@
     </div>
 
     <script type="module">
-        import { login, resetPassword } from "./auth.js";
+        import { login, googleSignIn } from "./auth.js";
 
         document.getElementById("loginBtn").onclick = async () => {
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
-
             if (!email || !password) {
                 alert("Please fill in both fields.");
                 return;
@@ -145,11 +150,8 @@
             }
         };
 
-        document.getElementById("forgotPassword").onclick = () => {
-            const email = prompt("Enter your email to reset password:");
-            if (email) {
-                resetPassword(email);
-            }
+        document.getElementById("googleLoginBtn").onclick = () => {
+            googleSignIn();
         };
     </script>
 
