@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GNTS Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    
+    <!-- Navigation Bar -->
+    <header class="bg-white shadow-md p-4 flex justify-between items-center border-b border-gray-300">
+        <div class="flex items-center space-x-3">
+            <img src="logo.png" alt="GNTS Logo" class="h-10">
+            <h1 class="text-2xl font-bold text-gray-900">GNTS Signage Dashboard</h1>
+        </div>
+        <div class="flex items-center space-x-6">
+            <button onclick="logout()" class="bg-red-600 text-white px-5 py-2 rounded-md hover:bg-red-700 shadow-md">Logout</button>
+        </div>
+    </header>
+
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-gray-900 text-white flex flex-col border-r border-gray-700">
+            <nav class="p-6 flex-1 space-y-4">
+                <a href="#" class="block p-3 flex items-center text-lg hover:bg-gray-700 rounded">📺 Screens</a>
+                <a href="#" class="block p-3 flex items-center text-lg hover:bg-gray-700 rounded">🎵 Playlists</a>
+                <a href="#" class="block p-3 flex items-center text-lg hover:bg-gray-700 rounded">📅 Schedules</a>
+                <a href="#" class="block p-3 flex items-center text-lg hover:bg-gray-700 rounded">⚙️ Settings</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Welcome to GNTS Signage</h2>
+            <p class="text-gray-600">Manage your digital signage content, screens, and schedules.</p>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (!localStorage.getItem("loggedIn")) {
+                const userResponse = confirm("You need an account to access the dashboard. Would you like to sign up?");
+                if (userResponse) {
+                    window.location.href = "signup.html";
+                } else {
+                    window.location.href = "login.html";
+                }
+            }
+        });
+
+        function logout() {
+            localStorage.removeItem("loggedIn");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

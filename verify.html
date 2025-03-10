@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Account - GNTS Signage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-screen flex items-center justify-center bg-gray-100">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Verify Your Account</h2>
+        
+        <p class="text-gray-600 text-center mb-4">Enter the 6-digit code sent to your email.</p>
+        
+        <div>
+            <label class="block text-gray-700 font-semibold mb-2">Verification Code</label>
+            <input type="text" id="otp" placeholder="Enter OTP" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 text-center text-lg">
+        </div>
+        
+        <button onclick="verifyOTP()" class="w-full mt-6 bg-green-600 text-white py-3 rounded-lg text-lg hover:bg-green-700 shadow-md">Verify</button>
+    </div>
+    
+    <script>
+        async function verifyOTP() {
+            const enteredOTP = document.getElementById("otp").value;
+            const storedUser = JSON.parse(localStorage.getItem("pendingUser"));
+            
+            if (!storedUser) {
+                alert("No pending verification. Please sign up again.");
+                window.location.href = "signup.html";
+                return;
+            }
+            
+            // Check OTP match
+            if (enteredOTP == storedUser.otp) {
+                try {
+                    // Store user as verified
+                    localStorage.setItem("userAccount", JSON.stringify({ email: storedUser.email, password: storedUser.password }));
+                    localStorage.removeItem("pendingUser");
+                    
+                    alert("Account verified! Redirecting to login page.");
+                    window.location.href = "login.html";
+                } catch (error) {
+                    alert("Error verifying OTP. Please try again.");
+                }
+            } else {
+                alert("Invalid OTP. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>

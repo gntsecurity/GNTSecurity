@@ -3,157 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gage Smith | Professional Resume</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="icon" href="assets/images/favicon/favicon.ico" type="image/x-icon">
+    <title>Open Signage</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+        img, video {
+            max-width: 80%;
+            max-height: 60vh;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="header">
-        <div class="container header-container">
-            <img src="assets/images/logo/logo.png" alt="Gage Smith Logo" class="logo" id="menu-toggle">
-            <nav class="navbar">
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#skills">Skills & Certifications</a>
-                <a href="assets/resume/Gage-Smith.pdf" target="_blank" class="download-resume">Download Resume</a>
-                <a href="https://www.coursera.org/user/3a96f820984cc17f095cbdb3b70a5755" target="_blank">Coursera Profile</a>
-            </nav>
-        </div>
-    </header>
+    <h1 id="message">Loading...</h1>
+    <img id="image" src="" alt="Signage Image" style="display:none;">
+    <video id="video" controls style="display:none;">
+        <source id="videoSource" src="" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1>Hi, I'm <span>Gage Smith</span></h1>
-            <p class="hero-subtitle">Capable and Team-Driven Leader | IT and Operations Specialist</p>
-            <p class="hero-summary">An experienced IT and operations specialist with expertise in ERP, EDI, and network management, driven to improve efficiency and enhance teamwork in a professional environment.</p>
-            <button class="primary-btn references-btn" id="references-btn">View My References</button>
-        </div>
-    </section>
+    <script>
+        function loadContent() {
+            const savedContent = localStorage.getItem("signageContent");
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container about-content">
-            <img src="assets/images/me/gagesmith.jpg" alt="Gage Smith" class="profile-image">
-            <p>I am a capable and team-driven leader with a diverse background in IT, customer service, distribution, and manufacturing. With strong skills in ERP systems, EDI, and Microsoft Project, I bring a comprehensive approach to both technical and operational roles. I currently manage IT infrastructure for both the Englewood, OH, and Brantford, ON locations, overseeing IT operations for both business units. My goal is to leverage my varied skills to drive efficiency, improve systems, and enhance teamwork in a professional environment.</p>
-        </div>
-    </section>
+            if (savedContent) {
+                const data = JSON.parse(savedContent);
 
-    <!-- Professional Experience Section -->
-    <section class="experience" id="experience">
-        <div class="container">
-            <h2>Professional Experience</h2>
-            <p class="experience-note">Hover over cards to see more information</p>
-            <div class="experience-cards">
-                <div class="experience-card">
-                    <div class="experience-front">
-                        <img src="assets/images/experience/1-IT.png" alt="IT Systems Administrator">
-                    </div>
-                    <div class="experience-back">
-                        <p class="experience-title"><strong>IT Systems Administrator</strong></p>
-                        <p><strong>Angstrom Fiber Englewood, LLC</strong></p>
-                        <p>June 2023 - Present</p>
-                        <p>Responsible for managing network infrastructure, supporting IT operations, and improving processes.</p>
-                    </div>
-                </div>
+                document.getElementById('message').innerText = data.message || "Welcome!";
 
-                <div class="experience-card">
-                    <div class="experience-front">
-                        <img src="assets/images/experience/2-CSR.png" alt="Customer Service Representative">
-                    </div>
-                    <div class="experience-back">
-                        <p class="experience-title"><strong>Customer Service Representative</strong></p>
-                        <p><strong>Angstrom Fiber Englewood, LLC</strong></p>
-                        <p>Jan 2022 - Oct 2023</p>
-                        <p>Handled customer inquiries, processed orders, and managed EDI for automotive clients.</p>
-                    </div>
-                </div>
+                const image = document.getElementById('image');
+                const video = document.getElementById('video');
+                const videoSource = document.getElementById('videoSource');
 
-                <div class="experience-card">
-                    <div class="experience-front">
-                        <img src="assets/images/experience/3-SUP.png" alt="Shipping & Receiving Supervisor">
-                    </div>
-                    <div class="experience-back">
-                        <p class="experience-title"><strong>Shipping & Receiving Supervisor</strong></p>
-                        <p><strong>Angstrom Fiber Englewood, LLC</strong></p>
-                        <p>June 2021 - Jan 2022</p>
-                        <p>Supervised a logistics team, streamlined processes, and managed inventory.</p>
-                    </div>
-                </div>
+                if (data.image) {
+                    image.src = data.image;
+                    image.style.display = 'block';
+                } else {
+                    image.style.display = 'none';
+                }
 
-                <div class="experience-card">
-                    <div class="experience-front">
-                        <img src="assets/images/experience/4-TRAIN.png" alt="Sr. Training Specialist">
-                    </div>
-                    <div class="experience-back">
-                        <p class="experience-title"><strong>Sr. Training Specialist</strong></p>
-                        <p><strong>Shiseido Distribution Center</strong></p>
-                        <p>April 2016 - June 2021</p>
-                        <p>Developed training materials to enhance employee performance and efficiency.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                if (data.video) {
+                    videoSource.src = data.video;
+                    video.load();
+                    video.style.display = 'block';
+                } else {
+                    video.style.display = 'none';
+                }
+            }
+        }
 
-    <!-- Skills & Certifications Section -->
-    <section id="skills" class="skills-certifications">
-        <div class="container skills-certifications-grid">
-            <div class="skills-section">
-                <h2>Skills</h2>
-                <ul>
-                    <li><span class="skill-name">IT & Network Management</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 80%;">80%</div></div></li>
-                    <li><span class="skill-name">Leadership & Team Coordination</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;">85%</div></div></li>
-                    <li><span class="skill-name">Customer Service & EDI</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;">70%</div></div></li>
-                    <li><span class="skill-name">PLEX Online Manufacturing Cloud (ERP System)</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 80%;">80%</div></div></li>
-                    <li><span class="skill-name">Microsoft Products</span><div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;">85%</div></div></li>
-                </ul>
-            </div>
-            <div class="certifications-section">
-                <h2>Certifications</h2>
-                <ul class="certifications-list">
-                    <li><strong>Google Cybersecurity Specialization</strong> - Coursera<br><span>Credential ID: 7K6KWBKUGJYS</span></li>
-                    <li><strong>IBM Cybersecurity Analyst Specialization</strong> - Coursera<br><span>Credential ID: CCSPJBPQGLEZ</span></li>
-                    <li><strong>Microsoft 365 Fundamentals Specialization</strong> - Coursera<br><span>Credential ID: ABKSFQA74RUC</span></li>
-                    <li><strong>Work Smarter with Microsoft Word (with Honors)</strong> - Coursera<br><span>Credential ID: APUB2F3YP84Q</span></li>
-                    <li><strong>Foundations of Project Management</strong> - Coursera<br><span>Credential ID: 8EPWZJ83JE4S</span></li>
-                    <li><strong>Google IT Support Certificate</strong> - Coursera<br><span>Credential ID: RFJ9V62ETLYF</span></li>
-                    <li><strong>Network Installation Fundamentals</strong> - Coursera<br><span>Credential ID: 7KXKETP6WPRD</span></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Popup for References -->
-    <div class="popup-overlay" id="popup-overlay">
-        <div class="popup-content">
-            <h3>References</h3>
-            <ul>
-                <li><strong>Michael Doyle</strong>, Plant Manager - 734-891-4341, mdoyle@angstrom-usa.com</li>
-                <li><strong>Jackie Stewart</strong>, HR Admin - 937-540-9889, jstewart@angstrom-usa.com</li>
-                <li><strong>Jody Carter</strong>, Plant Controller - 937-540-9889, jcarter@angstrom-usa.com</li>
-            </ul>
-            <button class="primary-btn close-btn" id="close-btn">Close</button>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Gage Smith | All rights reserved.</p>
-        <p>This site was custom-made with HTML, CSS, & JavaScript.</p>
-        <div class="contact-info">
-            <p>
-                <a href="tel:+19374744428">+1 (937) 474-4428</a> |
-                <a href="mailto:gsmith@gntsecurity.com">gsmith@gntsecurity.com</a> |
-                <a href="https://github.com/gntsecurity" target="_blank">GitHub</a> |
-                <a href="https://www.linkedin.com/in/gage-smith-889764297" target="_blank">LinkedIn</a>
-                <a href="https://www.coursera.org/user/3a96f820984cc17f095cbdb3b70a5755" target="_blank">Coursera</a>
-            </p>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="assets/js/scripts.js"></script>
+        loadContent();
+        setInterval(loadContent, 5000); // Refresh content every 5 seconds
+    </script>
 </body>
 </html>
