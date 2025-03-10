@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error - GNTS Signage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #223147 0%, #192234 100%);
+            font-family: 'Inter', sans-serif;
+            color: #e4eaf5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .glass-container {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 14px;
+            padding: 40px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h2 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #4c91f3, #a36ef7);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+            width: 100%;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 15px rgba(147, 51, 234, 0.8);
+            transform: translateY(-2px);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="glass-container">
+        <h2>Error</h2>
+        <p id="errorMessage">An error occurred.</p>
+        <a href="login.html"><button class="btn-primary">Go Back</button></a>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const message = urlParams.get("message");
+        if (message) {
+            document.getElementById("errorMessage").textContent = message;
+        }
+    </script>
+
+</body>
+</html>

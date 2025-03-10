@@ -4,16 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - GNTS Signage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
     <script defer src="auth.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #192234, #223147);
+            font-family: 'Inter', sans-serif;
+            color: #e4eaf5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 32px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .btn-logout {
+            background: linear-gradient(90deg, #e63946, #ff6b6b);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-logout:hover {
+            box-shadow: 0 0 15px rgba(230, 57, 70, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .dashboard-container {
+            flex: 1;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(15px);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .dashboard-card:hover {
+            box-shadow: 0 10px 25px rgba(76, 145, 243, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .footer {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #bcc8e4;
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-container {
+                padding: 10px;
+            }
+            .dashboard-card {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Navbar -->
     <header class="navbar">
-        <h1>Welcome, <span id="username">Loading...</span></h1>
-        <button id="logoutBtn">Logout</button>
+        <div class="logo">GNTS Dashboard</div>
+        <button id="logoutBtn" class="btn-logout">Logout</button>
     </header>
+
+    <!-- Dashboard Content -->
+    <main class="dashboard-container">
+        <h1 class="text-4xl font-bold mb-6">Welcome, <span id="username">Loading...</span></h1>
+        <p class="text-lg mb-4">Manage your digital signage content, screens, and schedules.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="dashboard-card">
+                <h3 class="text-2xl font-semibold">Manage Screens</h3>
+                <p class="text-sm mt-2">View and control connected digital signage screens.</p>
+            </div>
+
+            <div class="dashboard-card">
+                <h3 class="text-2xl font-semibold">Upload Content</h3>
+                <p class="text-sm mt-2">Easily upload and manage display content.</p>
+            </div>
+
+            <div class="dashboard-card">
+                <h3 class="text-2xl font-semibold">Schedule Displays</h3>
+                <p class="text-sm mt-2">Automate content scheduling for better engagement.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 GNTS Signage. All rights reserved.</p>
+    </footer>
 
     <script type="module">
         import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
@@ -22,6 +135,7 @@
         const auth = getAuth();
         const db = getFirestore();
 
+        // Fetch user info from Firestore
         onAuthStateChanged(auth, async (user) => {
             if (user) {
                 const userDoc = await getDoc(doc(db, "users", user.uid));
@@ -35,9 +149,11 @@
             }
         });
 
+        // Logout function
         document.getElementById("logoutBtn").onclick = () => {
             signOut(auth).then(() => window.location.href = "login.html");
         };
     </script>
+
 </body>
 </html>
