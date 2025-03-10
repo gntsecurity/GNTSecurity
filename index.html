@@ -3,24 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GNTS Signage - Welcome</title>
+    <title>GNTS Signage - Elevate Your Digital Displays</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 30px rgba(59, 130, 246, 0.5);
+        }
+        .cta-button {
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0px 5px 20px rgba(59, 130, 246, 0.7);
+        }
+    </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
-    <!-- Navigation -->
-    <header class="flex justify-between items-center p-6 bg-gray-800 shadow-md">
-        <h1 class="text-2xl font-bold">GNTS Signage</h1>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="flex justify-between items-center p-6 bg-transparent">
+        <h1 class="text-3xl font-bold tracking-wide">GNTS Signage</h1>
         <nav>
-            <a href="login.html" class="text-white px-4 py-2 hover:underline">Login</a>
-            <a href="signup.html" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700">Get Started</a>
+            <a href="login.html" class="text-gray-300 px-4 py-2 hover:text-blue-400 transition">Login</a>
+            <a href="signup.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition cta-button">Get Started</a>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="flex flex-col items-center justify-center text-center h-screen">
-        <h1 class="text-5xl font-bold mb-4">Elevate Your Message with Digital Signage</h1>
-        <p class="text-lg text-gray-400 mb-6">A powerful and professional signage platform for all your needs.</p>
-        <a href="signup.html" class="bg-green-500 text-white px-6 py-3 rounded-lg text-xl hover:bg-green-600">Try for Free</a>
+    <section class="flex flex-col items-center justify-center text-center min-h-screen px-6">
+        <h1 class="text-6xl font-extrabold mb-6 leading-tight">
+            The Future of <span class="text-blue-400">Digital Signage</span> is Here
+        </h1>
+        <p class="text-lg text-gray-300 mb-8 max-w-2xl">
+            A cutting-edge signage platform designed for seamless management, remote control, and enterprise-level security.
+        </p>
+
+        <a href="signup.html" class="bg-blue-500 text-white px-8 py-4 text-xl font-semibold rounded-lg shadow-md hover:bg-blue-600 transition cta-button">
+            Try for Free
+        </a>
+
+        <!-- Lottie Animation -->
+        <div class="mt-12">
+            <lottie-player src="https://lottie.host/5e5b85ac-7776-48e6-ba42-1573ea0195b4/CjjpLx5Get.lottie" background="transparent" speed="1" style="width: 600px; height: 600px;" loop autoplay></lottie-player>
+        </div>
     </section>
+
+    <!-- Features Section -->
+    <section class="py-24 text-center max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12">Why Choose GNTS Signage?</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="glass-card">
+                <h3 class="text-2xl font-semibold mb-4">🚀 Ultra-Fast Deployment</h3>
+                <p class="text-gray-300">Get your signage live within minutes with our intuitive cloud-based platform.</p>
+            </div>
+            <div class="glass-card">
+                <h3 class="text-2xl font-semibold mb-4">📡 Remote Screen Control</h3>
+                <p class="text-gray-300">Manage and update your displays remotely from any device.</p>
+            </div>
+            <div class="glass-card">
+                <h3 class="text-2xl font-semibold mb-4">🔒 Enterprise-Level Security</h3>
+                <p class="text-gray-300">Built with cutting-edge security measures to protect your data.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 bg-gray-800 mt-16">
+        <p class="text-gray-400">© 2025 GNTS Signage. All rights reserved.</p>
+        <p class="text-gray-400">
+            <a href="#" class="hover:text-blue-400 transition">Privacy Policy</a> |
+            <a href="#" class="hover:text-blue-400 transition">Terms of Service</a>
+        </p>
+    </footer>
+
 </body>
 </html>
