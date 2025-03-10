@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GNTS Signage - Elevate Your Digital Displays</title>
+    <title>GNTS Signage - The Future of Digital Displays</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
+        
         body {
             background: linear-gradient(135deg, #0f172a, #1e293b);
             color: white;
@@ -15,20 +16,21 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 32px;
+            padding: 20px 5%;
             max-width: 1400px;
             margin: 0 auto;
             width: 100%;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 700;
             letter-spacing: -0.5px;
             text-transform: uppercase;
@@ -47,73 +49,56 @@
 
         .cta-button {
             background: linear-gradient(90deg, #3b82f6, #9333ea);
-            padding: 10px 24px;
+            padding: 12px 24px;
             border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(147, 51, 234, 0.4);
         }
 
         .hero-section {
             text-align: center;
-            padding: 60px 20px;
+            padding: 100px 20px;
         }
 
         .hero-heading {
-            font-size: 50px;
+            font-size: 56px;
             font-weight: 700;
             max-width: 900px;
             line-height: 1.2;
-            margin: 0 auto 10px;
+            margin: 0 auto 20px;
         }
 
         .hero-subtext {
-            font-size: 18px;
+            font-size: 20px;
             color: #94a3b8;
             max-width: 600px;
-            margin: 0 auto 15px;
+            margin: 0 auto 25px;
         }
 
         .hero-button {
-            padding: 12px 32px;
-            font-size: 18px;
+            padding: 14px 36px;
+            font-size: 20px;
             font-weight: 600;
             border-radius: 8px;
         }
 
-        .info-section {
-            max-width: 1100px;
-            margin: 50px auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            text-align: left;
+        .floating-icons {
+            position: absolute;
+            top: 20%;
+            left: -50px;
+            font-size: 120px;
+            color: rgba(147, 51, 234, 0.1);
+            animation: float 6s infinite ease-in-out;
         }
 
-        .info-text {
-            max-width: 500px;
-        }
-
-        .info-heading {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .info-paragraph {
-            font-size: 18px;
-            color: #94a3b8;
-            line-height: 1.6;
-        }
-
-        .info-image {
-            display: flex;
-            justify-content: center;
-        }
-
-        .info-image img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 12px;
-            box-shadow: 0px 10px 30px rgba(147, 51, 234, 0.4);
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(20px); }
         }
 
         .footer {
@@ -124,27 +109,9 @@
             color: #94a3b8;
             margin-top: auto;
         }
-
-        .footer-links {
-            margin-top: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .footer-links a {
-            color: #94a3b8;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: #3b82f6;
-        }
     </style>
 </head>
 <body>
-
-    <!-- Navigation Bar -->
     <header class="navbar">
         <div class="logo">GNTS Signage</div>
         <nav class="nav-links">
@@ -153,56 +120,15 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <h1 class="hero-heading">
-            The Future of <span class="text-blue-400">Digital Signage</span> is Here
-        </h1>
-        <p class="hero-subtext">
-            A cutting-edge signage platform. Fast deployment, easy control, enterprise-level security.
-        </p>
-        <a href="signup.html" class="cta-button hero-button text-white shadow-md">
-            Try for Free
-        </a>
+    <section class="hero-section relative">
+        <i class="floating-icons fas fa-tv"></i>
+        <h1 class="hero-heading">Revolutionizing <span class="text-blue-400">Digital Signage</span></h1>
+        <p class="hero-subtext">Cloud-powered, ultra-fast, enterprise-grade digital signage for modern businesses.</p>
+        <a href="signup.html" class="cta-button hero-button text-white shadow-md">Try for Free</a>
     </section>
 
-    <!-- About GNTS Signage -->
-    <section class="info-section">
-        <div class="info-text">
-            <h2 class="info-heading">What is GNTS Signage?</h2>
-            <p class="info-paragraph">
-                GNTS Signage is a next-generation cloud-based signage platform that enables businesses to deploy, manage, and scale their digital displays effortlessly.
-                Whether you're a small business or an enterprise, our intuitive system provides an easy way to showcase dynamic content securely and efficiently.
-            </p>
-        </div>
-        <div class="info-image">
-            <img src="https://source.unsplash.com/400x300/?technology,display" alt="Digital Signage">
-        </div>
-    </section>
-
-    <!-- Why Choose GNTS? -->
-    <section class="info-section">
-        <div class="info-image">
-            <img src="https://source.unsplash.com/400x300/?cloud,security" alt="Security">
-        </div>
-        <div class="info-text">
-            <h2 class="info-heading">Why Choose GNTS?</h2>
-            <p class="info-paragraph">
-                We combine **speed, security, and simplicity** to give you the best digital signage experience.
-                Our platform ensures seamless integration, effortless content management, and enterprise-grade security to keep your data safe.
-            </p>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="footer">
         <p>© 2025 GNTS Signage. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Contact Us</a>
-        </div>
     </footer>
-
 </body>
 </html>
