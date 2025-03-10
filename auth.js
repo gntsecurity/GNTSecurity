@@ -40,7 +40,7 @@ export function login(email, password) {
 // Function to handle user logout
 export function logout() {
   return signOut(auth)
-    .then(() => console.log("User signed out"))
+    .then(() => window.location.href = "login.html") // Auto redirect on logout
     .catch(error => console.error("Logout Error:", error.message));
 }
 

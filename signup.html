@@ -32,11 +32,10 @@
             const password = document.getElementById("password").value;
             
             try {
-                const user = await signup(email, password);
-                alert("Account created successfully! Redirecting to login...");
-                window.location.href = "login.html";
+                await signup(email, password);
+                window.location.href = "dashboard.html"; // Auto redirect to dashboard
             } catch (error) {
-                alert("Error: " + error.message);
+                console.error("Error signing up:", error);
             }
         });
     </script>

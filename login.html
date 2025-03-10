@@ -32,11 +32,10 @@
             const password = document.getElementById("password").value;
             
             try {
-                const user = await login(email, password);
-                alert("Login successful! Redirecting to dashboard...");
-                window.location.href = "dashboard.html";
+                await login(email, password);
+                window.location.href = "dashboard.html"; // Auto redirect to dashboard
             } catch (error) {
-                alert("Error: " + error.message);
+                console.error("Error logging in:", error);
             }
         });
     </script>
