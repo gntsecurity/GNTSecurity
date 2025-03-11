@@ -1,24 +1,8 @@
 import { supabase } from "./supabase.js";
 
-// Show alert messages on the page
+// Show alert messages
 function showAlert(message, type = "error") {
     alert(`${type.toUpperCase()}: ${message}`);
-}
-
-// ✅ User Sign-Up with Email Verification
-export async function signup(name, email, password) {
-    try {
-        const { data, error } = await supabase.auth.signUp({ email, password });
-        if (error) throw error;
-
-        // Store user in database
-        await supabase.from("users").insert([{ id: data.user.id, name, email }]);
-
-        showAlert("Sign-up successful! Please check your email to verify your account.", "success");
-        window.location.href = "verify.html";
-    } catch (error) {
-        showAlert("Sign-up failed: " + error.message);
-    }
 }
 
 // ✅ User Login
@@ -31,6 +15,21 @@ export async function login(email, password) {
         setTimeout(() => window.location.href = "dashboard.html", 1500);
     } catch (error) {
         showAlert("Login failed: " + error.message);
+    }
+}
+
+// ✅ User Sign-Up
+export async function signup(name, email, password) {
+    try {
+        const { data, error } = await supabase.auth.signUp({ email, password });
+        if (error) throw error;
+
+        await supabase.from("users").insert([{ id: data.user.id, name, email }]);
+
+        showAlert("Sign-up successful! Please check your email to verify your account.", "success");
+        window.location.href = "verify.html";
+    } catch (error) {
+        showAlert("Sign-up failed: " + error.message);
     }
 }
 
@@ -56,7 +55,7 @@ export async function resetPassword(email) {
     }
 }
 
-// ✅ Logout Function
+// ✅ Logout
 export async function logout() {
     await supabase.auth.signOut();
     showAlert("You have been logged out.", "success");
@@ -65,7 +64,7 @@ export async function logout() {
 
 // ✅ Check Authentication Status
 supabase.auth.onAuthStateChange((event, session) => {
-    if (!session) {
+    if (!session && window.location.pathname !== "/login.html") {
         window.location.href = "login.html";
     }
 });
