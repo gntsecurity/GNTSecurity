@@ -62,9 +62,9 @@ export async function logout() {
     setTimeout(() => window.location.href = "index.html", 1000);
 }
 
-// ✅ Check Authentication Status
+// ✅ Fix: Only Redirect if Not Already on Login Page
 supabase.auth.onAuthStateChange((event, session) => {
-    if (!session && window.location.pathname !== "/login.html") {
+    if (!session && !window.location.pathname.includes("login.html")) {
         window.location.href = "login.html";
     }
 });
