@@ -1,7 +1,9 @@
-// Supabase Initialization
+// Import Supabase (Fix for Undefined Error)
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+
 const supabaseUrl = "https://hneunaxqlnbhwcqxjwly.supabase.co";
 const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...";
-const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
+const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 console.log("Supabase Loaded:", supabase);
 
