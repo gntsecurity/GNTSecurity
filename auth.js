@@ -5,7 +5,7 @@ function showAlert(message, type = "error") {
     alert(`${type.toUpperCase()}: ${message}`);
 }
 
-// ✅ LOGIN (Now Works Properly)
+// ✅ LOGIN FUNCTION (Fixes Refresh Issue)
 export async function login(email, password) {
     try {
         console.log("Logging in...");
@@ -18,17 +18,18 @@ export async function login(email, password) {
         }
 
         console.log("Login successful:", data);
-        window.location.href = "dashboard.html";
+        window.location.href = "dashboard.html"; // Redirect only AFTER successful login
     } catch (error) {
         console.error("Unexpected login error:", error);
         showAlert("An unexpected error occurred. Check the console.");
     }
 }
 
-// ✅ SIGNUP (Now Works Properly)
+// ✅ SIGNUP FUNCTION (Now Works Properly)
 export async function signup(name, email, password) {
     try {
         console.log("Signing up...");
+        
         const { data, error } = await supabase.auth.signUp({ email, password });
 
         if (error) {
@@ -38,15 +39,21 @@ export async function signup(name, email, password) {
         }
 
         console.log("Signup successful:", data);
+
+        // Store user name in Supabase DB
+        if (data.user) {
+            await supabase.from("users").insert([{ id: data.user.id, name, email }]);
+        }
+
         showAlert("Check your email for verification.", "success");
-        window.location.href = "login.html";
+        window.location.href = "login.html"; // Redirect AFTER signup
     } catch (error) {
         console.error("Unexpected signup error:", error);
         showAlert("An unexpected error occurred. Check the console.");
     }
 }
 
-// ✅ LOGOUT (Now Works Properly)
+// ✅ LOGOUT FUNCTION
 export async function logout() {
     try {
         console.log("Logging out...");
@@ -57,16 +64,21 @@ export async function logout() {
     }
 }
 
-// ✅ AUTH SESSION HANDLING (Prevents Page Looping Issues)
-supabase.auth.onAuthStateChange((event, session) => {
+// ✅ FIXED AUTH STATE HANDLING (Prevents Infinite Redirect Loop)
+supabase.auth.onAuthStateChange(async (event, session) => {
     console.log("Auth event:", event);
     console.log("Session:", session);
 
-    if (event === "SIGNED_IN") {
-        console.log("User signed in. Redirecting to dashboard...");
-        window.location.href = "dashboard.html";
-    } else if (!session) {
-        console.log("No active session. Redirecting to login...");
-        window.location.href = "login.html";
+    // ✅ Only redirect if on a protected page
+    if (session) {
+        console.log("User is signed in.");
+        if (window.location.pathname.includes("login.html") || window.location.pathname.includes("signup.html")) {
+            window.location.href = "dashboard.html";
+        }
+    } else {
+        console.log("User is signed out.");
+        if (window.location.pathname.includes("dashboard.html")) {
+            window.location.href = "login.html";
+        }
     }
 });
