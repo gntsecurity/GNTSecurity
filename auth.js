@@ -1,61 +1,69 @@
 import { supabase } from "./supabase.js";
 
-// User Sign Up
+// Show alert messages on the page
+function showAlert(message, type = "error") {
+    alert(`${type.toUpperCase()}: ${message}`);
+}
+
+// ✅ User Sign-Up with Email Verification
 export async function signup(name, email, password) {
     try {
-        const { user, error } = await supabase.auth.signUp({ email, password });
+        const { data, error } = await supabase.auth.signUp({ email, password });
         if (error) throw error;
-        
-        // Store user data in the database
-        await supabase.from("users").insert([{ id: user.id, name, email }]);
-        
-        alert("Sign-up successful! Please check your email to verify your account.");
+
+        // Store user in database
+        await supabase.from("users").insert([{ id: data.user.id, name, email }]);
+
+        showAlert("Sign-up successful! Please check your email to verify your account.", "success");
         window.location.href = "verify.html";
     } catch (error) {
-        alert("Sign-up failed: " + error.message);
+        showAlert("Sign-up failed: " + error.message);
     }
 }
 
-// User Login
+// ✅ User Login
 export async function login(email, password) {
     try {
-        const { user, error } = await supabase.auth.signInWithPassword({ email, password });
+        const { data, error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
-        
-        window.location.href = "dashboard.html";
+
+        showAlert("Login successful! Redirecting...", "success");
+        setTimeout(() => window.location.href = "dashboard.html", 1500);
     } catch (error) {
-        alert("Login failed: " + error.message);
+        showAlert("Login failed: " + error.message);
     }
 }
 
-// Google Sign-In
+// ✅ Google Sign-In
 export async function googleSignIn() {
     try {
-        const { user, error } = await supabase.auth.signInWithOAuth({ provider: 'google' });
+        const { data, error } = await supabase.auth.signInWithOAuth({ provider: 'google' });
         if (error) throw error;
     } catch (error) {
-        alert("Google Sign-in failed: " + error.message);
+        showAlert("Google Sign-in failed: " + error.message);
     }
 }
 
-// Password Reset
+// ✅ Password Reset
 export async function resetPassword(email) {
     try {
         const { error } = await supabase.auth.resetPasswordForEmail(email);
         if (error) throw error;
-        alert("Password reset email sent. Check your inbox.");
+
+        showAlert("Password reset email sent. Check your inbox.", "success");
     } catch (error) {
-        alert("Password reset failed: " + error.message);
+        showAlert("Password reset failed: " + error.message);
     }
 }
 
-// Logout Function
+// ✅ Logout Function
 export async function logout() {
     await supabase.auth.signOut();
-    window.location.href = "index.html";
+    showAlert("You have been logged out.", "success");
+    setTimeout(() => window.location.href = "index.html", 1000);
 }
 
-// Check Authentication Status
+// ✅ Check Authentication Status
 supabase.auth.onAuthStateChange((event, session) => {
     if (!session) {
         window.location.href = "login.html";
