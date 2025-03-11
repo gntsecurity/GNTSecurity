@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Content - GNTS Signage</title>
+    <link href="dist/output.css" rel="stylesheet">
+</head>
+<body class="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+
+    <main class="flex items-center justify-center flex-grow">
+        <div class="glass-container w-96 p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold text-center mb-6">Upload Content</h2>
+            <form id="uploadForm" class="space-y-4">
+                <input type="file" id="fileInput" class="input-field" required>
+                <button type="submit" class="btn btn-primary w-full">Upload</button>
+            </form>
+            <p id="uploadStatus" class="mt-4 text-center hidden"></p>
+        </div>
+    </main>
+
+    <script type="module">
+        import { supabase } from "./supabase.js";
+
+        document.getElementById("uploadForm").addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const fileInput = document.getElementById("fileInput");
+            if (!fileInput.files.length) {
+                alert("Please select a file to upload.");
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const { data, error } = await supabase.storage.from("signage-content").upload(`uploads/${file.name}`, file);
+
+            if (error) {
+                alert("Upload failed: " + error.message);
+                return;
+            }
+
+            document.getElementById("uploadStatus").innerText = "Upload successful!";
+            document.getElementById("uploadStatus").classList.remove("hidden");
+        });
+    </script>
+
+</body>
+</html>

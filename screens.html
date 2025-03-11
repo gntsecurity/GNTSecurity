@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Screens - GNTS Signage</title>
+    <link href="dist/output.css" rel="stylesheet">
+</head>
+<body class="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+
+    <main class="flex items-center justify-center flex-grow">
+        <div class="glass-container w-96 p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold text-center mb-6">Manage Screens</h2>
+            <ul id="screenList" class="text-center space-y-2"></ul>
+        </div>
+    </main>
+
+    <script type="module">
+        import { supabase } from "./supabase.js";
+
+        async function loadScreens() {
+            const { data, error } = await supabase.from("screens").select("*");
+            if (error) {
+                alert("Failed to load screens: " + error.message);
+                return;
+            }
+
+            const list = document.getElementById("screenList");
+            list.innerHTML = "";
+            data.forEach(screen => {
+                const item = document.createElement("li");
+                item.innerText = `${screen.name} (Code: ${screen.code})`;
+                list.appendChild(item);
+            });
+        }
+
+        loadScreens();
+    </script>
+
+</body>
+</html>
