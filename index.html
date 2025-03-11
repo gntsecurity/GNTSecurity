@@ -4,131 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GNTS Signage - The Future of Digital Displays</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        
-        body {
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: white;
-            font-family: 'Inter', sans-serif;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .logo {
-            font-size: 26px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            text-transform: uppercase;
-            transition: text-shadow 0.3s ease-in-out;
-        }
-
-        .logo:hover {
-            text-shadow: 0 0 15px rgba(59, 130, 246, 0.8), 0 0 30px rgba(147, 51, 234, 0.8);
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .cta-button {
-            background: linear-gradient(90deg, #3b82f6, #9333ea);
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(147, 51, 234, 0.4);
-        }
-
-        .hero-section {
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        .hero-heading {
-            font-size: 56px;
-            font-weight: 700;
-            max-width: 900px;
-            line-height: 1.2;
-            margin: 0 auto 20px;
-        }
-
-        .hero-subtext {
-            font-size: 20px;
-            color: #94a3b8;
-            max-width: 600px;
-            margin: 0 auto 25px;
-        }
-
-        .hero-button {
-            padding: 14px 36px;
-            font-size: 20px;
-            font-weight: 600;
-            border-radius: 8px;
-        }
-
-        .floating-icons {
-            position: absolute;
-            top: 20%;
-            left: -50px;
-            font-size: 120px;
-            color: rgba(147, 51, 234, 0.1);
-            animation: float 6s infinite ease-in-out;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(20px); }
-        }
-
-        .footer {
-            background: #1e293b;
-            padding: 30px 20px;
-            text-align: center;
-            font-size: 14px;
-            color: #94a3b8;
-            margin-top: auto;
-        }
-    </style>
+    <link href="dist/output.css" rel="stylesheet">
 </head>
-<body>
-    <header class="navbar">
-        <div class="logo">GNTS Signage</div>
-        <nav class="nav-links">
-            <a href="login.html" class="text-lg">Login</a>
-            <a href="signup.html" class="cta-button text-white">Get Started</a>
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 text-white min-h-screen flex flex-col">
+    
+    <!-- 🔹 Navigation Bar (Fixed Button Alignment & Size) -->
+    <header class="w-full p-6 flex justify-between items-center bg-black bg-opacity-50 fixed top-0 z-50">
+        <h1 class="text-2xl font-extrabold tracking-wide">GNTS Signage</h1>
+        <nav class="flex gap-6">
+            <a href="login.html" class="btn-nav">Login</a>
+            <a href="signup.html" class="btn-nav btn-primary">Get Started</a>
         </nav>
     </header>
 
-    <section class="hero-section relative">
-        <i class="floating-icons fas fa-tv"></i>
-        <h1 class="hero-heading">Revolutionizing <span class="text-blue-400">Digital Signage</span></h1>
-        <p class="hero-subtext">Cloud-powered, ultra-fast, enterprise-grade digital signage for modern businesses.</p>
-        <a href="signup.html" class="cta-button hero-button text-white shadow-md">Try for Free</a>
-    </section>
+    <!-- 🔹 Hero Section (Smaller & Higher on Page) -->
+    <main class="flex flex-col justify-center items-center text-center flex-grow mt-24">
+        <h1 class="text-4xl font-extrabold text-white drop-shadow-lg">
+            The Future of <span class="text-blue-400">Digital Signage</span>
+        </h1>
+        <p class="text-lg text-gray-300 mt-2 max-w-2xl">
+            Cloud-powered, ultra-fast, enterprise-grade digital signage at an affordable price.
+        </p>
 
-    <footer class="footer">
-        <p>© 2025 GNTS Signage. All rights reserved.</p>
+        <!-- 🔥 Premium Button (Aligned & Fixed Size) -->
+        <a href="signup.html" class="mt-6 px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full shadow-md hover:scale-105 transition transform duration-200">
+            Try for Free
+        </a>
+    </main>
+
+    <!-- 🔹 Footer (Added for Completion) -->
+    <footer class="w-full py-4 bg-black bg-opacity-50 text-center text-gray-400 text-sm">
+        &copy; 2025 GNTS Signage. All rights reserved.
     </footer>
+
 </body>
 </html>

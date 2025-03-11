@@ -2,7 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom styles */
+/* 🔹 Body Background */
 body {
     @apply bg-gradient-to-br from-gray-900 to-gray-800 text-white;
+}
+
+/* 🔹 Navbar */
+header {
+    @apply w-full p-6 flex justify-between items-center bg-black bg-opacity-50 fixed top-0;
+}
+
+.btn-nav {
+    @apply px-5 py-2 rounded-lg font-semibold text-white text-lg transition hover:text-blue-400;
+}
+
+.btn-primary {
+    @apply bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-md px-6 py-2 hover:scale-105 transition-all;
+}
+
+/* 🔹 Glass Effect Box */
+.glass-container {
+    @apply bg-white bg-opacity-10 backdrop-blur-lg p-8 rounded-xl shadow-lg text-center;
+}
+
+/* 🔹 Input Fields (Full Width & Spacing Fixed) */
+.input-field {
+    @apply w-full p-3 rounded-lg bg-white bg-opacity-20 text-white placeholder-gray-300 focus:outline-none;
+    margin-bottom: 12px;
+}
+
+/* 🔹 Buttons */
+.btn {
+    @apply w-full p-3 mt-4 rounded-lg font-semibold text-white text-lg;
+}
+
+.btn-primary {
+    @apply bg-gradient-to-r from-blue-500 to-indigo-600 text-white hover:scale-105 transition-all;
+}
+
+/* 🔹 Footer */
+footer {
+    @apply w-full py-4 bg-black bg-opacity-50 text-center text-gray-400 text-sm;
 }
