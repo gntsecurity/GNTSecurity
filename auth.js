@@ -32,33 +32,17 @@ export async function signup(name, email, password) {
     }
 }
 
-// ✅ PASSWORD RESET
-export async function resetPassword(email) {
-    try {
-        const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: "login.html" });
-        if (error) throw error;
-        showAlert("Password reset email sent.", "success");
-    } catch (error) {
-        showAlert("Password reset failed: " + error.message);
-    }
-}
-
 // ✅ LOGOUT
 export async function logout() {
     await supabase.auth.signOut();
     window.location.href = "index.html";
 }
 
-// ✅ AUTH STATE FIX
+// ✅ FIX SESSION HANDLING
 supabase.auth.onAuthStateChange((event, session) => {
-    const currentPage = window.location.pathname;
-    const allowedPages = ["/index.html", "/login.html", "/signup.html", "/verify.html", "/forgot-password.html"];
-
-    if (!session && !allowedPages.includes(currentPage)) {
-        window.location.href = "login.html";
-    }
-
-    if (session && currentPage === "/login.html") {
+    if (event === "SIGNED_IN") {
         window.location.href = "dashboard.html";
+    } else if (!session) {
+        window.location.href = "login.html";
     }
 });
