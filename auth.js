@@ -76,10 +76,18 @@ export async function logout() {
 // ✅ Auth State Change Handling (Fixed Redirect Issues)
 supabase.auth.onAuthStateChange((event, session) => {
     console.log("Auth state changed:", event, session);
-    
-    if (event === "SIGNED_IN") {
-        window.location.href = "dashboard.html";
-    } else if (!session && window.location.pathname !== "/login.html" && window.location.pathname !== "/signup.html") {
+
+    const currentPage = window.location.pathname;
+
+    // ✅ Allow users to access login, sign-up, and verify pages without redirection
+    const allowedPages = ["/login.html", "/signup.html", "/verify.html", "/forgot-password.html"];
+
+    if (!session && !allowedPages.includes(currentPage)) {
         window.location.href = "login.html";
+    }
+
+    // ✅ Redirect signed-in users away from login/signup pages
+    if (session && allowedPages.includes(currentPage)) {
+        window.location.href = "dashboard.html";
     }
 });
