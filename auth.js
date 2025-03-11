@@ -27,7 +27,7 @@ export async function login(email, password) {
     }
 }
 
-// ✅ User Sign-Up
+// ✅ FIXED: User Sign-Up with Delay Before Redirecting
 export async function signup(name, email, password) {
     console.log("Signup function called");
 
@@ -35,10 +35,16 @@ export async function signup(name, email, password) {
         const { data, error } = await supabase.auth.signUp({ email, password });
         if (error) throw error;
 
+        console.log("Signup successful:", data);
+
         await supabase.from("users").insert([{ id: data.user.id, name, email }]);
 
-        showAlert("Sign-up successful! Please check your email to verify your account.", "success");
-        window.location.href = "verify.html";
+        showAlert("Sign-up successful! Redirecting to login in 3 seconds...", "success");
+
+        // ✅ FIX: Add a delay to prevent login page from breaking
+        setTimeout(() => {
+            window.location.href = "login.html";
+        }, 3000);
     } catch (error) {
         showAlert("Sign-up failed: " + error.message);
     }
