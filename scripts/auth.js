@@ -1,11 +1,7 @@
-// Import Supabase (Fix for Undefined Error)
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-
 const supabaseUrl = "https://hneunaxqlnbhwcqxjwly.supabase.co";
-const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...";
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+const supabaseAnonKey = "YOUR_SUPABASE_ANON_KEY"; // Replace with actual key
 
-console.log("Supabase Loaded:", supabase);
+const supabase = window.supabase.createClient(supabaseUrl, supabaseAnonKey);
 
 document.addEventListener("DOMContentLoaded", function () {
     // Handle Login
@@ -13,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (loginForm) {
         loginForm.addEventListener("submit", async (event) => {
             event.preventDefault();
-
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
 
@@ -34,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (signupForm) {
         signupForm.addEventListener("submit", async (event) => {
             event.preventDefault();
-
             const email = document.getElementById("signup-email").value;
             const password = document.getElementById("signup-password").value;
 
@@ -46,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             alert("Signup successful! Please log in.");
-            window.location.href = "index.html";
+            window.location.href = "login.html";
         });
     }
 
@@ -56,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
         logoutBtn.addEventListener("click", async () => {
             await supabase.auth.signOut();
             localStorage.removeItem("supabase_session");
-            window.location.href = "index.html";
+            window.location.href = "login.html";
         });
     }
 
@@ -64,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.location.pathname.includes("dashboard.html")) {
         const session = JSON.parse(localStorage.getItem("supabase_session"));
         if (!session) {
-            window.location.href = "index.html";
+            window.location.href = "login.html";
         }
     }
 });
