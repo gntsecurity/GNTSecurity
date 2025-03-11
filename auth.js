@@ -5,11 +5,20 @@ function showAlert(message, type = "error") {
     alert(`${type.toUpperCase()}: ${message}`);
 }
 
-// ✅ User Login
+// ✅ User Login with Debugging
 export async function login(email, password) {
+    console.log("Login function called");
+    console.log("Email:", email);
+    console.log("Password:", password ? "Entered" : "Not Entered");
+
     try {
         const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-        if (error) throw error;
+        console.log("Supabase Response:", data, error);
+
+        if (error) {
+            console.error("Login Error:", error);
+            throw error;
+        }
 
         showAlert("Login successful! Redirecting...", "success");
         setTimeout(() => window.location.href = "dashboard.html", 1500);
@@ -20,6 +29,8 @@ export async function login(email, password) {
 
 // ✅ User Sign-Up
 export async function signup(name, email, password) {
+    console.log("Signup function called");
+
     try {
         const { data, error } = await supabase.auth.signUp({ email, password });
         if (error) throw error;
@@ -35,6 +46,8 @@ export async function signup(name, email, password) {
 
 // ✅ Google Sign-In
 export async function googleSignIn() {
+    console.log("Google Sign-in function called");
+
     try {
         const { data, error } = await supabase.auth.signInWithOAuth({ provider: 'google' });
         if (error) throw error;
@@ -45,6 +58,8 @@ export async function googleSignIn() {
 
 // ✅ Password Reset
 export async function resetPassword(email) {
+    console.log("Reset password function called");
+
     try {
         const { error } = await supabase.auth.resetPasswordForEmail(email);
         if (error) throw error;
@@ -57,6 +72,8 @@ export async function resetPassword(email) {
 
 // ✅ Logout
 export async function logout() {
+    console.log("Logout function called");
+    
     await supabase.auth.signOut();
     showAlert("You have been logged out.", "success");
     setTimeout(() => window.location.href = "index.html", 1000);
@@ -64,6 +81,8 @@ export async function logout() {
 
 // ✅ Fix: Only Redirect if Not Already on Login Page
 supabase.auth.onAuthStateChange((event, session) => {
+    console.log("Auth state changed:", event, session);
+
     if (!session && !window.location.pathname.includes("login.html")) {
         window.location.href = "login.html";
     }
