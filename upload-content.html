@@ -17,28 +17,39 @@
         </div>
     </main>
 
-    <script type="module">
-        import { supabase } from "./supabase.js";
+<script>
+    document.getElementById("uploadBtn").addEventListener("click", async () => {
+        const file = document.getElementById("fileInput").files[0];
 
-        document.getElementById("uploadBtn").addEventListener("click", async () => {
-            const file = document.getElementById("fileInput").files[0];
-            if (!file) {
-                alert("Please select a file to upload.");
-                return;
-            }
+        if (!file) {
+            alert("Please select a file.");
+            return;
+        }
 
-            const filePath = `uploads/${file.name}`;
-            const { data, error } = await supabase.storage.from("content").upload(filePath, file);
+        const formData = new FormData();
+        formData.append("file", file);
 
-            if (error) {
-                alert("Upload failed: " + error.message);
-                return;
+        try {
+            const response = await fetch(`https://storage.bunnycdn.com/gnts-signage-content/${file.name}`, {
+                method: "PUT",
+                headers: {
+                    "AccessKey": "fd6bbc44-87ee-4f32-9e8e1e469b7-92a7-49a1",  // Replace with BunnyCDN Storage Access Key
+                    "Content-Type": file.type
+                },
+                body: file
+            });
+
+            if (!response.ok) {
+                throw new Error("Upload failed: " + response.statusText);
             }
 
             alert("Upload successful!");
             document.getElementById("uploadStatus").textContent = "File uploaded!";
-        });
-    </script>
+        } catch (error) {
+            alert("Upload failed: " + error.message);
+        }
+    });
+</script>
 
 </body>
 </html>
