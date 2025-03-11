@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Content - GNTS Signage</title>
+    <link href="dist/output.css" rel="stylesheet">
+</head>
+<body class="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+
+    <div class="glass-container w-96 p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold text-center mb-6">Schedule Content</h2>
+        <select id="screenSelect" class="input-field"></select>
+        <input type="text" id="contentUrl" placeholder="Enter content URL" class="input-field">
+        <input type="datetime-local" id="startTime" class="input-field">
+        <input type="datetime-local" id="endTime" class="input-field">
+        <button id="scheduleBtn" class="btn btn-primary w-full mt-4">Schedule</button>
+    </div>
+
+    <script type="module">
+        import { supabase } from "./supabase.js";
+
+        async function loadScreens() {
+            const { data, error } = await supabase.from("screens").select("*");
+            if (error) {
+                alert("Failed to load screens.");
+                return;
+            }
+            const screenSelect = document.getElementById("screenSelect");
+            data.forEach(screen => {
+                const option = document.createElement("option");
+                option.value = screen.code;
+                option.textContent = `${screen.name} (${screen.code})`;
+                screenSelect.appendChild(option);
+            });
+        }
+
+        document.getElementById("scheduleBtn").addEventListener("click", async () => {
+            const screenCode = document.getElementById("screenSelect").value;
+            const contentUrl = document.getElementById("contentUrl").value.trim();
+            const startTime = document.getElementById("startTime").value;
+            const endTime = document.getElementById("endTime").value;
+
+            if (!screenCode || !contentUrl || !startTime || !endTime) {
+                alert("Fill all fields.");
+                return;
+            }
+
+            const { error } = await supabase.from("playlists").insert([{ screen_code: screenCode, content_url: contentUrl, start_time: startTime, end_time: endTime }]);
+
+            if (error) {
+                alert("Failed to schedule content.");
+                return;
+            }
+
+            alert("Content scheduled successfully!");
+        });
+
+        loadScreens();
+    </script>
+
+</body>
+</html>

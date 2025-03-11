@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - GNTS Signage</title>
+    <link href="dist/output.css" rel="stylesheet">
+</head>
+<body class="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+
+    <main class="flex items-center justify-center flex-grow">
+        <div class="glass-container w-96 p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold text-center mb-6">Screen Analytics</h2>
+            <div id="analyticsData" class="text-center"></div>
+        </div>
+    </main>
+
+    <script type="module">
+        import { supabase } from "./supabase.js";
+
+        async function loadAnalytics() {
+            const { data, error } = await supabase.from("screens").select("*");
+
+            if (error) {
+                alert("Failed to load analytics: " + error.message);
+                return;
+            }
+
+            let content = "";
+            data.forEach(screen => {
+                content += `<p>${screen.name}: ${screen.content_url ? "Active" : "No Content"}</p>`;
+            });
+
+            document.getElementById("analyticsData").innerHTML = content;
+        }
+
+        loadAnalytics();
+    </script>
+
+</body>
+</html>
