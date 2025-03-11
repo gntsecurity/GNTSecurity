@@ -3,53 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - GNTS Signage</title>
-    <link href="dist/output.css" rel="stylesheet">
+    <title>GNTS Signage - Signup</title>
+    <link rel="stylesheet" href="public/css/auth.css">
+    <script defer src="scripts/auth.js"></script>
 </head>
-<body class="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-    
-    <!-- 🔹 Navbar -->
-    <header class="w-full p-6 flex justify-between items-center bg-black bg-opacity-50 fixed top-0">
-        <h1 class="text-2xl font-bold">GNTS Signage</h1>
-        <nav class="flex gap-6">
-            <a href="login.html" class="btn-nav">Login</a>
-            <a href="signup.html" class="btn-nav btn-primary">Get Started</a>
-        </nav>
-    </header>
+<body>
 
-    <!-- 🔹 Sign-Up Form -->
-    <main class="flex items-center justify-center flex-grow mt-24">
-        <div class="glass-container w-96 p-8 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-bold mb-6 text-center">Create an Account</h2>
-            <div class="space-y-4">
-                <input id="name" type="text" placeholder="Full Name" class="input-field">
-                <input id="email" type="email" placeholder="Email Address" class="input-field">
-                <input id="password" type="password" placeholder="Password" class="input-field">
-                <button id="signupBtn" class="btn btn-primary w-full">Sign Up</button>
-            </div>
-            <p class="mt-4 text-center text-sm">Already have an account? 
-                <a href="login.html" class="text-blue-400 hover:underline">Log In</a>
-            </p>
-        </div>
-    </main>
+    <div class="auth-container">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <input type="email" id="signup-email" placeholder="Email" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="index.html">Login</a></p>
+    </div>
 
-    <!-- 🔹 Footer -->
-    <footer class="w-full py-4 bg-black bg-opacity-50 text-center text-gray-400 text-sm">
-        &copy; 2025 GNTS Signage. All rights reserved.
-    </footer>
-
-    <script type="module">
-        import { signup } from "./auth.js";
-        document.getElementById("signupBtn").addEventListener("click", async () => {
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            if (!name || !email || !password) {
-                alert("Please enter all fields.");
-                return;
-            }
-            await signup(name, email, password);
-        });
-    </script>
 </body>
 </html>

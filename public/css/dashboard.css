@@ -1,0 +1,48 @@
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #222;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+}
+
+.dashboard-main {
+    margin-left: 260px;
+    padding: 20px;
+}
+
+.screen-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.screen-box {
+    background: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
