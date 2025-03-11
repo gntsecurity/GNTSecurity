@@ -6,41 +6,37 @@
     <title>Upload Content - GNTS Signage</title>
     <link href="dist/output.css" rel="stylesheet">
 </head>
-<body class="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+<body class="flex flex-col min-h-screen bg-gray-900 text-white">
 
     <main class="flex items-center justify-center flex-grow">
         <div class="glass-container w-96 p-8 rounded-lg shadow-lg">
             <h2 class="text-2xl font-bold text-center mb-6">Upload Content</h2>
-            <form id="uploadForm" class="space-y-4">
-                <input type="file" id="fileInput" class="input-field" required>
-                <button type="submit" class="btn btn-primary w-full">Upload</button>
-            </form>
-            <p id="uploadStatus" class="mt-4 text-center hidden"></p>
+            <input type="file" id="fileInput" class="input-field">
+            <button id="uploadBtn" class="btn btn-primary w-full mt-4">Upload</button>
+            <p id="uploadStatus" class="text-center mt-4"></p>
         </div>
     </main>
 
     <script type="module">
         import { supabase } from "./supabase.js";
 
-        document.getElementById("uploadForm").addEventListener("submit", async (event) => {
-            event.preventDefault();
-
-            const fileInput = document.getElementById("fileInput");
-            if (!fileInput.files.length) {
+        document.getElementById("uploadBtn").addEventListener("click", async () => {
+            const file = document.getElementById("fileInput").files[0];
+            if (!file) {
                 alert("Please select a file to upload.");
                 return;
             }
 
-            const file = fileInput.files[0];
-            const { data, error } = await supabase.storage.from("signage-content").upload(`uploads/${file.name}`, file);
+            const filePath = `uploads/${file.name}`;
+            const { data, error } = await supabase.storage.from("content").upload(filePath, file);
 
             if (error) {
                 alert("Upload failed: " + error.message);
                 return;
             }
 
-            document.getElementById("uploadStatus").innerText = "Upload successful!";
-            document.getElementById("uploadStatus").classList.remove("hidden");
+            alert("Upload successful!");
+            document.getElementById("uploadStatus").textContent = "File uploaded!";
         });
     </script>
 

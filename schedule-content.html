@@ -6,16 +6,18 @@
     <title>Schedule Content - GNTS Signage</title>
     <link href="dist/output.css" rel="stylesheet">
 </head>
-<body class="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+<body class="flex flex-col min-h-screen bg-gray-900 text-white">
 
-    <div class="glass-container w-96 p-8 rounded-lg shadow-lg">
-        <h2 class="text-2xl font-bold text-center mb-6">Schedule Content</h2>
-        <select id="screenSelect" class="input-field"></select>
-        <input type="text" id="contentUrl" placeholder="Enter content URL" class="input-field">
-        <input type="datetime-local" id="startTime" class="input-field">
-        <input type="datetime-local" id="endTime" class="input-field">
-        <button id="scheduleBtn" class="btn btn-primary w-full mt-4">Schedule</button>
-    </div>
+    <main class="flex items-center justify-center flex-grow">
+        <div class="glass-container w-96 p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold text-center mb-6">Schedule Content</h2>
+            <select id="screenSelect" class="input-field"></select>
+            <input type="text" id="contentUrl" placeholder="Enter content URL" class="input-field">
+            <input type="datetime-local" id="startTime" class="input-field">
+            <input type="datetime-local" id="endTime" class="input-field">
+            <button id="scheduleBtn" class="btn btn-primary w-full mt-4">Schedule</button>
+        </div>
+    </main>
 
     <script type="module">
         import { supabase } from "./supabase.js";

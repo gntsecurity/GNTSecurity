@@ -7,46 +7,21 @@
     <link href="dist/output.css" rel="stylesheet">
     <script src="https://js.stripe.com/v3/"></script>
 </head>
-<body class="flex flex-col min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+<body class="flex flex-col min-h-screen bg-gray-900 text-white">
 
-    <div class="glass-container w-96 p-8 rounded-lg shadow-lg">
-        <h2 class="text-2xl font-bold text-center mb-6">Choose a Plan</h2>
-        <button class="btn btn-primary w-full" onclick="subscribe('free')">Free Plan</button>
-        <button class="btn btn-primary w-full mt-2" onclick="subscribe('standard')">Standard - $19/mo</button>
-        <button class="btn btn-primary w-full mt-2" onclick="subscribe('enterprise')">Enterprise - $49/mo</button>
-    </div>
+    <main class="flex items-center justify-center flex-grow">
+        <div class="glass-container w-96 p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold text-center mb-6">Choose a Plan</h2>
+            <button class="btn btn-primary w-full" onclick="subscribe('standard')">Standard - $19/mo</button>
+            <button class="btn btn-primary w-full mt-2" onclick="subscribe('enterprise')">Enterprise - $49/mo</button>
+        </div>
+    </main>
 
     <script type="module">
         import { supabase } from "./supabase.js";
         const stripe = Stripe("YOUR_STRIPE_PUBLISHABLE_KEY");
-
         async function subscribe(plan) {
-            const { data: user, error } = await supabase.auth.getUser();
-            if (!user) {
-                alert("You must be logged in.");
-                return;
-            }
-
-            const { data, error: subError } = await supabase.from("subscriptions").insert([{ user_id: user.id, plan }]);
-            if (subError) {
-                alert("Subscription failed.");
-                return;
-            }
-
-            const prices = {
-                free: "price_XXXXX",
-                standard: "price_YYYYY",
-                enterprise: "price_ZZZZZ"
-            };
-
-            const { error: stripeError } = await stripe.redirectToCheckout({
-                lineItems: [{ price: prices[plan], quantity: 1 }],
-                mode: "subscription",
-                successUrl: window.location.origin + "/dashboard.html",
-                cancelUrl: window.location.origin + "/subscribe.html"
-            });
-
-            if (stripeError) alert("Stripe Checkout failed.");
+            stripe.redirectToCheckout({ lineItems: [{ price: plan, quantity: 1 }], mode: "subscription" });
         }
     </script>
 

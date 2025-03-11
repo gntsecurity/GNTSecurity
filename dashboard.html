@@ -5,36 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - GNTS Signage</title>
     <link href="dist/output.css" rel="stylesheet">
+    <script type="module" src="auth.js"></script>
 </head>
-<body class="flex h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-    
-    <!-- 🔹 Sidebar -->
-    <aside class="w-64 min-h-screen bg-black bg-opacity-60 p-6 shadow-lg flex flex-col">
-        <h2 class="text-xl font-bold mb-4">GNTS Signage</h2>
-        <nav class="space-y-3 flex-grow">
-            <a href="dashboard.html" class="nav-link">Dashboard</a>
-            <a href="screens.html" class="nav-link">Manage Screens</a>
-            <a href="content.html" class="nav-link">Upload Content</a>
-            <a href="library.html" class="nav-link">Library</a>
-            <a href="schedules.html" class="nav-link">Schedules</a>
-        </nav>
-        <!-- 🔹 Logout button (Moved to Bottom) -->
-        <button id="logoutBtn" class="logout-btn mt-auto">Logout</button>
-    </aside>
+<body class="flex min-h-screen bg-gray-900 text-white">
 
-    <!-- 🔹 Main Content -->
-    <main class="flex-1 p-8 relative">
-        <div class="flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Welcome to Your Dashboard</h1>
-            <!-- 🔹 +New Button in Top Right -->
-            <a href="add-screen.html" class="btn-primary px-6 py-2 rounded-lg text-lg">+ New</a>
+    <!-- Sidebar Navigation -->
+    <nav class="w-64 h-screen bg-gray-800 p-4 fixed left-0 top-0 flex flex-col justify-between">
+        <div>
+            <h2 class="text-xl font-bold mb-6">GNTS Signage</h2>
+            <ul class="space-y-4">
+                <li><a href="dashboard.html" class="hover:text-blue-400">🏠 Dashboard</a></li>
+                <li><a href="upload-content.html" class="hover:text-blue-400">📤 Upload Content</a></li>
+                <li><a href="content-library.html" class="hover:text-blue-400">📂 Content Library</a></li>
+                <li><a href="schedule-content.html" class="hover:text-blue-400">📅 Schedule Content</a></li>
+                <li><a href="subscribe.html" class="hover:text-green-400 font-bold">💳 Subscription</a></li>
+            </ul>
         </div>
-        <p class="mt-2 text-gray-300">Manage your digital signage content.</p>
+        <button onclick="logout()" class="btn btn-primary w-full mt-6">🚪 Logout</button>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 ml-64 p-8">
+        <h1 class="text-3xl font-bold mb-6">Dashboard</h1>
+
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-3 gap-6">
+            <a href="upload-content.html" class="glass-container text-center p-6 rounded-lg shadow-md hover:scale-105 transition">
+                <h2 class="text-lg font-semibold">Upload Content</h2>
+                <p class="text-sm text-gray-300">Add new images and videos</p>
+            </a>
+            <a href="content-library.html" class="glass-container text-center p-6 rounded-lg shadow-md hover:scale-105 transition">
+                <h2 class="text-lg font-semibold">View Content Library</h2>
+                <p class="text-sm text-gray-300">Manage your uploaded media</p>
+            </a>
+            <a href="schedule-content.html" class="glass-container text-center p-6 rounded-lg shadow-md hover:scale-105 transition">
+                <h2 class="text-lg font-semibold">Schedule Content</h2>
+                <p class="text-sm text-gray-300">Assign media to screens</p>
+            </a>
+        </div>
+
+        <!-- Active Screens Section -->
+        <section class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">📺 Active Screens</h2>
+            <div id="screenList" class="grid grid-cols-3 gap-6"></div>
+        </section>
     </main>
 
     <script type="module">
-        import { logout } from "./auth.js";
-        document.getElementById("logoutBtn").addEventListener("click", logout);
+        import { supabase } from "./supabase.js";
+
+        async function loadScreens() {
+            const { data, error } = await supabase.from("screens").select("*");
+            if (error) {
+                alert("Failed to load screens.");
+                return;
+            }
+
+            const screenList = document.getElementById("screenList");
+            screenList.innerHTML = "";
+
+            data.forEach(screen => {
+                const div = document.createElement("div");
+                div.classList.add("glass-container", "p-4", "rounded-lg", "shadow-md");
+                div.innerHTML = `
+                    <h3 class="text-lg font-semibold">${screen.name}</h3>
+                    <p class="text-sm text-gray-400">Code: ${screen.code}</p>
+                    <a href="screen-player.html?code=${screen.code}" class="btn btn-primary block text-center mt-2">View</a>
+                `;
+                screenList.appendChild(div);
+            });
+        }
+
+        async function logout() {
+            await supabase.auth.signOut();
+            window.location.href = "index.html";
+        }
+
+        loadScreens();
     </script>
 
 </body>
